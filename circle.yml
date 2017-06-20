@@ -7,7 +7,7 @@ dependencies:
     - yarn install
 test:
   override:
-    - echo "NO-TESTS"
+    - yarn test
 deployment:
   staging:
     branch: staging

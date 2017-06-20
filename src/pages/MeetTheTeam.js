@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import { TopSection } from '../components/TopSection';
 import { MentorList } from '../components/MentorList';
