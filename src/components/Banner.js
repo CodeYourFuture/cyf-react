@@ -9,7 +9,7 @@ export const Banner = () => (
       <h1>Coding School for Refugees</h1>
       <p>Learn to code and find a job</p>
       <div className="page-title-bottom-link">
-        <Link className="big-link-2 btn" to="students">
+        <Link to="students" className="big-link-2 btn">
           Apply Now
         </Link>
         <Link
