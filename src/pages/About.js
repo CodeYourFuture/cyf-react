@@ -13,7 +13,7 @@ export const About = () => (
       <p>We have launched a 6-month web development programme in London, coached by a group of professional developers.</p>
       <p><strong>This is just the beginning.</strong> In the coming months we will be expanding our programme to other regions
       and cities.</p>
-      <p>If you are interested in participating as a <a href="students.html#info">student</a>, <a href="volunteers.html">coach or volunteer</a>, sign up!</p>
+      <p>If you are interested in participating as a <a href="students">student</a>, <a href="volunteers">coach or volunteer</a>, sign up!</p>
       <p>
       For all other inquiries please contact us at <a href="mailto:contact@codeyourfuture.co" title="Contact us">contact@codeyourfuture.co</a>
       <br /><br />
