@@ -1,13 +1,13 @@
-import german from './german.jpg';
-import mozafar from './mozafar.jpg';
-import kash from './kash.jpg';
-import amit from './amit.jpg';
-import simon from './simon.jpg';
-import james from './james.png';
-import bex from './bex.jpg';
-import claudia from './claudia.jpg';
-import nate from './nate.jpg';
-import will from './will.jpg';
+import german from './photos/german.jpg';
+import mozafar from './photos/mozafar.jpg';
+import kash from './photos/kash.jpg';
+import amit from './photos/amit.jpg';
+import simon from './photos/simon.jpg';
+import james from './photos/james.png';
+import bex from './photos/bex.jpg';
+import claudia from './photos/claudia.jpg';
+import nate from './photos/nate.jpg';
+import will from './photos/will.jpg';
 
 const mentors = [
   {
