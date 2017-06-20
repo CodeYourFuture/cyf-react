@@ -3,7 +3,6 @@ import { AsSeen } from '../components/AsSeen'
 import { Banner } from '../components/Banner'
 import { WhatWeTeach } from '../components/WhatWeTeach'
 
-
 export const Home = () => (
   <div className="Home">
     <div className="App-intro">
@@ -14,7 +13,4 @@ export const Home = () => (
     <AsSeen />
   </div>
 )
-
-export default Home;
-
 

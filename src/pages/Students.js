@@ -1,7 +1,5 @@
 import React from 'react'
-import {
-  Link
-} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { TopSection } from '../components/TopSection'
 
@@ -20,7 +18,7 @@ export const Students = () => {
       </Link>, where over 50% of the graduates have found technical jobs.</p>
 
     <div className="section-bottom-link">
-      <a className="big-link-3 btn scroll" href="#info">Find out more</a>
+      <Link className="big-link-3 btn scroll" to="/about">Find out more</Link>
     </div>
   </div>
 )
@@ -61,23 +59,42 @@ return (
 
         <div className="col-sm-6 col-md-6 block-2-box">
           <h3 className="text-left">Start Learning Now</h3>
-          <p>As part of the application process, we encourage you to complete one or more of these challenges:</p>
+          <p>As part of the selection process, applicants are asked to learn the basics of coding. No previous experience is required!</p>
+
+          <h4><strong>From a computer/laptop:</strong></h4>
           <ul className="text-left">
             <li>Join&nbsp;
               <Link
-                to="https://www.freecodecamp.com/challenges/build-a-tribute-page"
+                to="https://www.khanacademy.org/computing/computer-programming/html-css"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Khan Academy
+              </Link>
+              &nbsp;and complete Intro to HTML/CSS: Making webpages
+            </li>
+            <li>Join&nbsp;
+              <Link
+                to="https://www.freecodecamp.com/"
                 target="_blank"
                 rel="noopener noreferrer">
                 FreeCodeCamp
               </Link>
               &nbsp;and complete a minimum of 20 hours on Front End Development</li>
-            <li>Complete at least one course in
+          </ul>
+
+          <h4><strong>From a smartphone:</strong></h4>
+          <ul className="text-left">
+            <li>Join&nbsp;
               <Link
-                to="https://www.codecademy.com/"
+                to="https://sololearn.com"
                 target="_blank"
-                rel="noopener noreferrer">
-                &nbsp;Codeacademy
-              </Link>: HTML&CSS, Make a Website, Make an Interactive Website</li>
+                rel="noopener noreferrer"
+              >
+                SoloLearn app
+              </Link>
+              &nbsp;and complete the modules on HTML and CSS Fundamentals
+            </li>
           </ul>
           </div>
           </div>

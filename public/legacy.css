@@ -9534,7 +9534,11 @@ img {
 .big-link-3:hover,
 .big-link-3:focus,
 .big-link-3:active,
-.big-link-3:active:focus {
+.big-link-3:active:focus,
+.big-link-square:hover,
+.big-link-square:focus,
+.big-link-square:active,
+.big-link-square:active:focus {
   outline: 0;
   opacity: 0.6;
   background: rgba(0, 0, 0, 0.2);

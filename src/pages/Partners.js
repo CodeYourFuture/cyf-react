@@ -1,7 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import { TopSection } from '../components/TopSection'
-
-
 
 export const Partners = () => {
   const partnersText = (
@@ -10,7 +10,7 @@ export const Partners = () => {
         <p>Together we’ll help to solve both of these issues.</p>
 
         <div className="section-bottom-link">
-          <a className="big-link-3 btn" href="mailto:contact@codeyourfuture.co?subject=Interested in partnership">Get in Touch</a>
+          <Link className="big-link-3 btn" to="mailto:contact@codeyourfuture.co?subject=Interested in partnership">Get in Touch</Link>
         </div>
       </div>
   )

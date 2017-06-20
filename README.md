@@ -1,6 +1,8 @@
 # Code Yor Future
 ---
 
+[![CircleCI](https://circleci.com/gh/CodeYourFuture/cyf-react.svg?style=svg)](https://circleci.com/gh/CodeYourFuture/cyf-react)
+
 __NOTE__: Currently reactifying the old repo, instructions not up to date
 
 
