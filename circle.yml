@@ -20,4 +20,4 @@ deployment:
     commands:
       - npm install yarn
       - yarn build
-      - ./deploy.sh production
+      - ./ci/deploy.sh production
