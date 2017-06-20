@@ -18,6 +18,6 @@ deployment:
   production:
     branch: master
     commands:
-      - npm install
-      - gulp rebuild
+      - npm install yarn
+      - yarn build
       - ./deploy.sh production
