@@ -1,7 +1,5 @@
 import React from 'react'
-import {
-  Link
-} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { TopSection } from '../components/TopSection'
 
@@ -20,7 +18,7 @@ export const Students = () => {
       </Link>, where over 50% of the graduates have found technical jobs.</p>
 
     <div className="section-bottom-link">
-      <a className="big-link-3 btn scroll" href="#info">Find out more</a>
+      <Link className="big-link-3 btn scroll" to="/about">Find out more</Link>
     </div>
   </div>
 )

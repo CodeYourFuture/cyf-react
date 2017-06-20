@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import '../stylesheets/index.scss'
 //TODO: change hrefs to react-bootstrap links
@@ -8,12 +9,16 @@ export const Banner = () => (
       <h1>Coding School for Refugees</h1>
       <p>Learn to code and find a job</p>
       <div className="page-title-bottom-link">
-        <a className="big-link-2 btn" href="students#info">
+        <Link className="big-link-2 btn" to="students">
           Apply Now
-        </a>
-        <a className="big-link-2 btn" href="volunteers" target="_blank" rel="noopener noreferrer">
+        </Link>
+        <Link
+           className="big-link-2 btn"
+           to="volunteers"
+           target="_blank"
+           rel="noopener noreferrer">
           Become a volunteer
-        </a>
+        </Link>
       </div>
     </div>
   </div>
