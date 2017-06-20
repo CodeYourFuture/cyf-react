@@ -32,13 +32,6 @@ const mentors = [
   },
 
   {
-    firstName: 'Bex',
-    lastName: 'Bolton',
-    photo: bex,
-    title: 'Javascript & NodeJS'
-  },
-
-  {
     firstName: 'Amit',
     lastName: 'Shah',
     photo: amit,
@@ -50,6 +43,13 @@ const mentors = [
     lastName: 'Legg',
     photo: simon,
     title: 'Javascript'
+  },
+
+  {
+    firstName: 'Bex',
+    lastName: 'Bolton',
+    photo: bex,
+    title: 'Javascript & NodeJS'
   },
 
   {

@@ -2,9 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 import { TopSection } from '../components/TopSection';
-import { MentorCard } from '../components/MentorCard';
-
-import mentors from '../content/mentors';
+import { MentorList } from '../components/MentorList';
 
 const Intro = (
   <section id="intro">
@@ -18,18 +16,12 @@ const Intro = (
   </section>
 );
 
-const Mentors = () => (
-  <section id="mentors" className="col-sm-8 col-sm-offset-2 block-2-box row">
-    {mentors.map(mentor => <MentorCard {...mentor} />)}
-  </section>
-);
-
 export const MeetTheTeam = () => (
   <main className="container">
     <TopSection title="Meet the team" content={Intro} />
 
-    <div className="row">
-      <Mentors />
+    <div className="col-sm-8 col-sm-offset-2 block-2-box">
+      <MentorList />
     </div>
   </main>
 );
