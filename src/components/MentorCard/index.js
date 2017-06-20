@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 
 export const MentorCard = ({firstName, lastName, photo, title}) => (
-  <div className="col-xs-6 col-sm-6 col-md-4 mentor">
+  <div className="col-xs-6 col-sm-4 mentor">
     <img className="mentor-image" src={photo} alt={`${firstName} ${lastName}`} />
 
     <h4 className="mentor-name">
