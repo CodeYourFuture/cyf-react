@@ -12,9 +12,11 @@
     "styled-components": "^2.1.0"
   },
   "devDependencies": {
+    "prettier": "^1.6.1",
     "react-scripts": "1.0.7"
   },
   "scripts": {
+    "format": "prettier --write \"src/**/*.js\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
