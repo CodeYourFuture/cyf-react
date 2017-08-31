@@ -13,5 +13,4 @@ export const Home = () => (
     <WhatWeTeach />
     <AsSeen />
   </div>
-)
-
+);

@@ -1,27 +1,45 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { TopSection } from '../components/TopSection'
+import { TopSection } from '../components/TopSection';
 
 const AboutText = (
   <div>
-    <p>We are a non-profit organisation supporting refugees with the dream of becoming developers.</p>
-    <p>In their journey of interrupted lives, unfinished studies and integration challenges, many asylum seekers and refugees
-    yearn to update their tech skills, but lack learning opportunities. <strong>We want to change this.</strong></p>
-    <p>Last year we launched the first cohort of our  6-month web development programme, coached by a group of professional developers. Today we are running new classes in London and Glasgow. This is <strong>just the beginning</strong>. With your help we will be expanding to other regions and cities.</p>
-    <p>If you are interested in participating as a <Link to="students">student</Link>, <Link to="volunteers">coach or volunteer</Link>, sign up!</p>
     <p>
-    For all other inquiries please contact us at <Link to="mailto:contact@codeyourfuture.co" title="Contact us">contact@codeyourfuture.co</Link>
-    <br /><br />
+      We are a non-profit organisation supporting refugees with the dream of
+      becoming developers.
+    </p>
+    <p>
+      In their journey of interrupted lives, unfinished studies and integration
+      challenges, many asylum seekers and refugees yearn to update their tech
+      skills, but lack learning opportunities.{' '}
+      <strong>We want to change this.</strong>
+    </p>
+    <p>
+      Last year we launched the first cohort of our 6-month web development
+      programme, coached by a group of professional developers. Today we are
+      running new classes in London and Glasgow. This is{' '}
+      <strong>just the beginning</strong>. With your help we will be expanding
+      to other regions and cities.
+    </p>
+    <p>
+      If you are interested in participating as a{' '}
+      <Link to="students">student</Link>,{' '}
+      <Link to="volunteers">coach or volunteer</Link>, sign up!
+    </p>
+    <p>
+      For all other inquiries please contact us at{' '}
+      <Link to="mailto:contact@codeyourfuture.co" title="Contact us">
+        contact@codeyourfuture.co
+      </Link>
+      <br />
+      <br />
     </p>
   </div>
 );
 
 export const About = () => (
   <main>
-    <TopSection
-      title="About Us"
-      content={AboutText}
-    />
+    <TopSection title="About Us" content={AboutText} />
   </main>
-)
+);

@@ -1,28 +1,35 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { TopSection } from '../components/TopSection'
+import { TopSection } from '../components/TopSection';
 
 export const Students = () => {
   const studentText = (
-  <div>
-    <p>Welcome to our community. Here, you will learn all the technical
-      skills needed to become a professional developer.</p>
-    <p>During the course you will learn the whole web development stack,
-      including HTML/CSS, JavaScript and backend technologies. We’ll complement
-      the training with workshops on modern software methodologies and job interview practices.</p>
+    <div>
+      <p>
+        Welcome to our community. Here, you will learn all the technical skills
+        needed to become a professional developer.
+      </p>
+      <p>
+        During the course you will learn the whole web development stack,
+        including HTML/CSS, JavaScript and backend technologies. We’ll
+        complement the training with workshops on modern software methodologies
+        and job interview practices.
+      </p>
 
     <p>Our 6-month web development programme has proven a success, where 75% of our graduates eligible to work have found permanent employment in the industry.</p>
 
     <div className="section-bottom-link">
       <a className="big-link-3 btn scroll" href="#requirements">Find out more</a>
     </div>
-  </div>
-)
-return (
-  <div>
-  <TopSection title="The beginning of your programming career" content={studentText}/>
-  <div className="student-hero-wrap"></div>
+  );
+  return (
+    <div>
+      <TopSection
+        title="The beginning of your programming career"
+        content={studentText}
+      />
+      <div className="student-hero-wrap" />
 
   <div id="info" className="block-2-container section-container">
     <div className="container">
@@ -41,63 +48,76 @@ return (
                 <div className="teaser-description">
                     <strong>Interested?</strong>
                   </div>
-              </div>
-                <div className="col-sm-2">
-                  <Link className="big-link-3 btn block-2-box-btn"
-                    to="/apply/student"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Apply now
-                  </Link>
+                  <div className="col-sm-2">
+                    <Link
+                      className="big-link-3 btn block-2-box-btn"
+                      to="/apply/student"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Apply now
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <div className="col-sm-6 col-md-6 block-2-box">
-          <h3 className="text-left">Start Learning Now</h3>
-          <p>As part of the selection process, applicants are asked to learn the basics of coding. No previous experience is required!</p>
+            <div className="col-sm-6 col-md-6 block-2-box">
+              <h3 className="text-left">Start Learning Now</h3>
+              <p>
+                As part of the selection process, applicants are asked to learn
+                the basics of coding. No previous experience is required!
+              </p>
 
-          <h4><strong>From a computer/laptop:</strong></h4>
-          <ul className="text-left">
-            <li>Join&nbsp;
-              <Link
-                to="https://www.khanacademy.org/computing/computer-programming/html-css"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Khan Academy
-              </Link>
-              &nbsp;and complete Intro to HTML/CSS: Making webpages
-            </li>
-            <li>Join&nbsp;
-              <Link
-                to="https://www.freecodecamp.com/"
-                target="_blank"
-                rel="noopener noreferrer">
-                FreeCodeCamp
-              </Link>
-              &nbsp;and complete a minimum of 20 hours on Front End Development</li>
-          </ul>
+              <h4>
+                <strong>From a computer/laptop:</strong>
+              </h4>
+              <ul className="text-left">
+                <li>
+                  Join&nbsp;
+                  <Link
+                    to="https://www.khanacademy.org/computing/computer-programming/html-css"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Khan Academy
+                  </Link>
+                  &nbsp;and complete Intro to HTML/CSS: Making webpages
+                </li>
+                <li>
+                  Join&nbsp;
+                  <Link
+                    to="https://www.freecodecamp.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    FreeCodeCamp
+                  </Link>
+                  &nbsp;and complete a minimum of 20 hours on Front End
+                  Development
+                </li>
+              </ul>
 
-          <h4><strong>From a smartphone:</strong></h4>
-          <ul className="text-left">
-            <li>Join&nbsp;
-              <Link
-                to="https://sololearn.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                SoloLearn app
-              </Link>
-              &nbsp;and complete the modules on HTML and CSS Fundamentals
-            </li>
-          </ul>
-          </div>
+              <h4>
+                <strong>From a smartphone:</strong>
+              </h4>
+              <ul className="text-left">
+                <li>
+                  Join&nbsp;
+                  <Link
+                    to="https://sololearn.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    SoloLearn app
+                  </Link>
+                  &nbsp;and complete the modules on HTML and CSS Fundamentals
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    )
-}
-
+  );
+};

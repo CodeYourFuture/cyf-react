@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Home } from './Home';
 
 jest.mock('react-router-dom', () => ({
-  Link: () => <div></div>,
+  Link: () => <div />
 }));
 
 it('renders without crashing', () => {

@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import { Nav, Navbar, NavItem } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
+import { Nav, Navbar, NavItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 import cyflogo from '../img/cyf_brand.png';
 import fblogo from '../img/ico/fb_logo.svg';
@@ -14,27 +14,27 @@ import emaillogo from '../img/ico/email-icon.svg';
 const logoStyle = {
   width: '20px',
   height: '21px'
-}
+};
 
 const cyflogoStyle = {
   width: '158px',
   height: '50px'
-}
+};
 
-const handleLink = (linkName) => {
-  let URL='';
+const handleLink = linkName => {
+  let URL = '';
   switch (linkName) {
-    case "facebook":
-      URL="https://www.facebook.com/codeyourfuture.co"
+    case 'facebook':
+      URL = 'https://www.facebook.com/codeyourfuture.co';
       break;
-    case "twitter":
-      URL="https://twitter.com/CodeYourFuture_"
+    case 'twitter':
+      URL = 'https://twitter.com/CodeYourFuture_';
       break;
-    case "linkedin":
-      URL="https://www.linkedin.com/company/codeyourfuture"
+    case 'linkedin':
+      URL = 'https://www.linkedin.com/company/codeyourfuture';
       break;
-    case "email":
-      URL="mailto:contact@codeyourfuture.co"
+    case 'email':
+      URL = 'mailto:contact@codeyourfuture.co';
       break;
     case "blog":
       URL="https://medium.com/@CodeYourFuture"
@@ -44,8 +44,8 @@ const handleLink = (linkName) => {
     default:
       break;
   }
-  window.open(URL, "_blank");
-}
+  window.open(URL, '_blank');
+};
 
 export const Navigation = () => (
   <Navbar collapseOnSelect>

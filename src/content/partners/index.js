@@ -6,20 +6,20 @@ const partners = {
   ticketmaster: {
     name: 'Ticketmaster',
     url: 'http://www.ticketmaster.com/',
-    logo: ticketmaster,
+    logo: ticketmaster
   },
 
   cititec: {
     name: 'Cititec',
     url: 'http://www.cititec.com',
-    logo: cititec,
+    logo: cititec
   },
-  
+
   pipedrive: {
     name: 'Pipedrive',
     ur: 'http://www.pipedrive.com',
-    logo: pipedrive,
-  },
+    logo: pipedrive
+  }
 };
 
 export default partners;

@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import '../stylesheets/index.scss'
+import '../stylesheets/index.scss';
 //TODO: change hrefs to react-bootstrap links
 export const Banner = () => (
   <div className="page-title">
@@ -13,13 +13,14 @@ export const Banner = () => (
           Apply Now
         </Link>
         <Link
-           className="big-link-2 btn"
-           to="volunteers"
-           target="_blank"
-           rel="noopener noreferrer">
+          className="big-link-2 btn"
+          to="volunteers"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Become a volunteer
         </Link>
       </div>
     </div>
   </div>
-)
+);
