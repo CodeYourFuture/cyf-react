@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 export const Event = (event) => {
 
@@ -35,9 +36,13 @@ export const Event = (event) => {
         </div>
         <div className="small-9 medium-10 columns">
           <div className="title">
-            <a href={`/events/${id}`}>{title}</a>
+            <Link to={`/event/${id}`}>
+              {title}
+            </Link>
             &nbsp;at&nbsp;
-            <a href="">{location}</a>
+            <Link to={`/event/${id}`}>
+              {location}
+            </Link>
           </div>
           <div className="row">
             <div className="medium-6 columns">

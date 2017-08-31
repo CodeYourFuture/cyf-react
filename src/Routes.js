@@ -8,6 +8,7 @@ import {
 import { Home } from './containers/Home'
 import { Volunteers } from './pages/Volunteers'
 import { Students } from './pages/Students'
+import Event from './pages/Event'
 import { Events } from './pages/Events'
 import { Partners } from './pages/Partners'
 import { About } from './pages/About'
@@ -24,6 +25,7 @@ export const Routes = () => (
       <Route exact path="/" component={Home}/>
       <Route path="/about" component={About}/>
       <Route path="/events" component={Events}/>
+      <Route path="/event/:event_id" component={Event}/>
       <Route path="/students" component={Students}/>
       <Route path="/volunteers" component={Volunteers}/>
       <Route path="/apply/:form_type" component={Apply}/>

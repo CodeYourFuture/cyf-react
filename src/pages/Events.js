@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { TopSection } from '../components/TopSection'
 import { Event } from '../components/Event'
 
@@ -33,15 +34,58 @@ const renderEvents = () => {
     )
   }
 
-export const Events = () => {
-  return (
-    <div>
-      <TopSection
-        title="Events"
-        content="Our current classes are done every Sunday in London and Edinburgh"/>
-      <div className="col-sm-8 col-sm-offset-2 section-description">
-        {renderEvents()}
+export class Events extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleAuth = this.handleAuth.bind(this);
+
+    this.state = {
+      isAuthenticated: false
+    };
+  }
+
+  handleAuth() {
+    // TODO: Add API
+
+    this.setState({isAuthenticated: true});
+  }
+
+  render() {
+    return (
+      <div>
+        {!this.state.isAuthenticated &&
+          <div>
+            <TopSection
+              title="Events"
+              content="Events and classes can only be viewed by students and mentors."/>
+
+            <div className="col-sm-8 col-sm-offset-2 section-description">
+              <div><strong>Please log in with:</strong></div>
+              <Link className="big-link-3 btn" to="#" onClick={this.handleAuth}>
+                  Github
+              </Link>
+
+              or
+
+              <Link className="big-link-3 btn" to="#" onClick={this.handleAuth}>
+                  Google
+              </Link>
+            </div>
+          </div>
+        }
+
+        {this.state.isAuthenticated &&
+          <div>
+            <TopSection
+              title="Events"
+              content="Our current classes are done every Sunday in London and Edinburgh"/>
+            <div className="col-sm-8 col-sm-offset-2 section-description">
+              {renderEvents()}
+            </div>
+          </div>
+        }
       </div>
-    </div>
-  )
+    )
+  }
 }
