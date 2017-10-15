@@ -1,175 +1,138 @@
 import React from 'react';
+import moment from 'moment';
 import { Link } from 'react-router-dom';
+import { AuthLogin } from '../components/AuthLogin';
 import { TopSection } from '../components/TopSection';
-
-const SomeEvents = [
-  {
-    attending: true,
-    attendeesCount: 13,
-    id: '1',
-    date: 'Monday, Jun 19',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    time: '12:00 PM',
-    location: 'Ticketmaster (Angel, London)',
-    title: 'Javascript Module 1',
-    mentors: [{ name: 'Kash', id: 1 }, { name: 'Bryce', id: 2 }],
-    sponsors: ['Ticketmaster']
-  },
-  {
-    attending: false,
-    attendeesCount: 13,
-    id: '2',
-    date: 'Tuesday, Jun 20',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    time: '12:00 PM',
-    location: 'Ticketmaster (Angel, London)',
-    title: 'Javascript Module 1',
-    mentors: [{ name: 'Kash', id: 1, url: '' }],
-    sponsors: [{ name: 'Ticketmaster', url: '' }]
-  }
-];
 
 class Event extends React.Component {
   constructor(props) {
     super(props);
 
     this.addAttendee = this.addAttendee.bind(this);
+    this.setUser = this.setUser.bind(this);
     this.removeAttendee = this.removeAttendee.bind(this);
 
     this.state = {
-      event: {}
+      event: {},
+      user: undefined
     };
+  }
 
-    this.getEvent().then(event => this.setState({ event }));
+  componentWillMount() {
+    const { event_id } = this.props.match.params;
+
+    window.FirebaseInitialized
+      .database()
+      .ref('events/' + event_id)
+      .on('value', response => {
+        this.setState({
+          event: response.val()
+        });
+      });
   }
 
   addAttendee() {
-    // TODO: Add API
+    let type = 'attendees';
 
-    // placholder for setting state
-    if (this.props.currentUser.mentor) {
-      const mentors = [...this.state.event.mentors, this.props.currentUser];
-
-      this.setState({
-        event: { ...this.state.event, attending: true, mentors }
-      });
-    } else {
-      this.setState({
-        event: {
-          ...this.state.event,
-          attending: true,
-          attendeesCount: this.state.event.attendeesCount + 1
-        }
-      });
+    if (this.state.user.mentor) {
+      type = 'mentors';
     }
-  }
 
-  getEvent() {
-    const { event_id } = this.props.match.params;
-
-    // TODO: Add API
-    return Promise.resolve(SomeEvents.find(item => item.id === event_id));
+    window.FirebaseInitialized
+      .database()
+      .ref('events/' + this.props.match.params.event_id + '/' + type)
+      .child(this.state.user.uid)
+      .set(this.state.user.displayName || this.state.user.email);
   }
 
   removeAttendee() {
-    // TODO: Add API
+    let type = 'attendees';
 
-    // placholder for setting state
-    if (this.props.currentUser.mentor) {
-      const mentors = this.state.event.mentors.filter(
-        mentor => mentor.id !== this.props.currentUser.id
-      );
-
-      this.setState({
-        event: { ...this.state.event, attending: false, mentors }
-      });
-    } else {
-      this.setState({
-        event: {
-          ...this.state.event,
-          attending: false,
-          attendeesCount: this.state.event.attendeesCount - 1
-        }
-      });
+    if (this.state.user.mentor) {
+      type = 'mentors';
     }
+
+    window.FirebaseInitialized
+      .database()
+      .ref('events/' + this.props.match.params.event_id + '/' + type)
+      .child(this.state.user.uid)
+      .set(null);
+  }
+
+  setUser(user) {
+    this.setState({ user });
   }
 
   render() {
     const {
-      attending,
-      attendeesCount,
+      attendees = {},
       date,
-      time,
       description,
       location,
       title,
-      mentors = []
+      mentors = {}
     } = this.state.event;
+
+    const { user = {} } = this.state;
+
+    const attending = attendees[user.uid] || mentors[user.uid];
 
     return (
       <div>
         <TopSection content={description} title={title} />
         <div className="col-sm-8 col-sm-offset-2 section-description">
           <div>
-            <strong>Date:</strong>
-            {date}
+            <h4>When: </h4>
+            {moment(date).format('MMMM Do YYYY, h:mm a')}
           </div>
 
           <div>
-            <strong>Time:</strong>
-            {time}
-          </div>
-
-          <div>
-            <strong>Location:</strong>
+            <h4>Where: </h4>
             {location}
           </div>
 
           <div className="row">
-            <strong>Mentors:</strong>
+            <h4>Mentors: </h4>
 
-            {mentors.map(mentor => (
-              <span key={mentor.id} className="medium-6 columns">
-                {mentor.name}
+            {Object.keys(mentors).map(mentorId => (
+              <span key={mentorId} className="medium-6 columns">
+                {mentors[mentorId]}
               </span>
             ))}
           </div>
 
           <div>
-            <strong>Number of Attendees:</strong>
-            {attendeesCount}
+            <h4>Number of Attendees: </h4>
+            {Object.keys(attendees).length + Object.keys(mentors).length}
           </div>
 
           <div>
-            <div>Are you going?</div>
+            <h4>Are you going?</h4>
 
-            <Link
-              className="big-link-3 btn"
-              disabled={attending}
-              to="#"
-              onClick={this.addAttendee}
-            >
-              Yes
-            </Link>
-            <Link
-              className="big-link-3 btn"
-              disabled={!attending}
-              to="#"
-              onClick={this.removeAttendee}
-            >
-              No
-            </Link>
+            <AuthLogin onAuth={this.setUser}>
+              <Link
+                className={attending ? 'btn-success btn' : 'btn'}
+                disabled={attending}
+                to="#"
+                onClick={this.addAttendee}
+              >
+                Yes
+              </Link>
+
+              <Link
+                className={!attending ? 'btn-success btn' : 'btn'}
+                disabled={!attending}
+                to="#"
+                onClick={this.removeAttendee}
+              >
+                No
+              </Link>
+            </AuthLogin>
           </div>
         </div>
       </div>
     );
   }
 }
-
-Event.defaultProps = {
-  currentUser: { mentor: true, name: 'Bryce', id: 2 }
-};
 
 export default Event;

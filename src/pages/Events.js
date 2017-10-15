@@ -1,88 +1,70 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AuthLogin } from '../components/AuthLogin';
 import { TopSection } from '../components/TopSection';
-import { Event } from '../components/Event';
-
-const SomeEvents = [
-  {
-    id: '1',
-    date: 'Monday, Jun 19',
-    time: '12:00 PM',
-    location: 'Ticketmaster (Angel, London)',
-    title: 'Javascript Module 1',
-    mentors: ['Kash'],
-    sponsors: ['Ticketmaster']
-  },
-  {
-    id: '2',
-    date: 'Tuesday, Jun 20',
-    time: '12:00 PM',
-    location: 'Ticketmaster (Angel, London)',
-    title: 'Javascript Module 1',
-    mentors: [{ name: 'Kash', url: '' }],
-    sponsors: [{ name: 'Ticketmaster', url: '' }]
-  }
-];
-
-const renderEvents = () => {
-  return SomeEvents.map(event => {
-    return <Event key={event.id} {...event} />;
-  });
-};
+import { EventSummary } from '../components/EventSummary';
 
 export class Events extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleAuth = this.handleAuth.bind(this);
-
     this.state = {
-      isAuthenticated: false
+      events: []
     };
-  }
 
-  handleAuth() {
-    // TODO: Add API
+    window.FirebaseInitialized
+      .database()
+      .ref('/events/')
+      .once('value')
+      .then(response => {
+        const events = [];
 
-    this.setState({ isAuthenticated: true });
+        const value = response.val();
+
+        for (let key in value) {
+          events.push({
+            id: key,
+            ...value[key]
+          });
+        }
+
+        events.sort((a, b) => {
+          if (a.date < b.date) {
+            return -1;
+          }
+
+          if (a.date > b.date) {
+            return 1;
+          }
+
+          return 0;
+        });
+
+        this.setState({ events });
+      });
   }
 
   render() {
     return (
       <div>
-        {!this.state.isAuthenticated && (
-          <div>
-            <TopSection
-              title="Events"
-              content="Events and classes can only be viewed by students and mentors."
-            />
+        <div>
+          <TopSection
+            title="Events"
+            content="Our current classes are done every Sunday in London and Edinburgh"
+          />
 
-            <div className="col-sm-8 col-sm-offset-2 section-description">
-              <div>
-                <strong>Please log in with:</strong>
-              </div>
-              <Link className="big-link-3 btn" to="#" onClick={this.handleAuth}>
-                Github
-              </Link>
-              or
-              <Link className="big-link-3 btn" to="#" onClick={this.handleAuth}>
-                Google
-              </Link>
-            </div>
-          </div>
-        )}
+          <div className="col-sm-4 col-sm-offset-4 section-description">
+            {Array.reverse(this.state.events).map(event => (
+              <EventSummary key={event.id} {...event} />
+            ))}
 
-        {this.state.isAuthenticated && (
-          <div>
-            <TopSection
-              title="Events"
-              content="Our current classes are done every Sunday in London and Edinburgh"
-            />
-            <div className="col-sm-8 col-sm-offset-2 section-description">
-              {renderEvents()}
-            </div>
+            <AuthLogin admin={true}>
+              <Link className="big-link-3 btn" to="/event/create">
+                Create New Event
+              </Link>
+            </AuthLogin>
           </div>
-        )}
+        </div>
       </div>
     );
   }

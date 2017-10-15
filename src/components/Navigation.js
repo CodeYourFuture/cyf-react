@@ -36,8 +36,8 @@ const handleLink = linkName => {
     case 'email':
       URL = 'mailto:contact@codeyourfuture.co';
       break;
-    case "blog":
-      URL="https://medium.com/@CodeYourFuture"
+    case 'blog':
+      URL = 'https://medium.com/@CodeYourFuture';
       break;
     case 1:
       return;
@@ -56,57 +56,41 @@ export const Navigation = () => (
       <Navbar.Toggle />
     </Navbar.Header>
     <Navbar.Collapse>
-    <Nav pullRight onSelect={handleLink.bind(this)}>
-      <LinkContainer to="/about">
-        <NavItem eventKey={1}>About</NavItem>
-      </LinkContainer>
-      <LinkContainer to="/students">
-      <NavItem eventKey={1}>Students</NavItem>
-    </LinkContainer>
-     <LinkContainer to="/volunteers">
-      <NavItem eventKey={1}>Volunteers</NavItem>
-    </LinkContainer>
-    <LinkContainer to="/events">
-      <NavItem eventKey={1}>Events</NavItem>
-    </LinkContainer>
-     <LinkContainer to="/partners">
-      <NavItem  eventKey={1}>Partners</NavItem>
-    </LinkContainer>
-     <LinkContainer to="/meet-the-team">
-      <NavItem  eventKey={1}>Meet the team</NavItem>
-    </LinkContainer>
-    <NavItem className="nav-icon" eventKey={"blog"}>
-       Blog
-     </NavItem>
-     <NavItem className="nav-icon" eventKey={"facebook"}>
-       <img
-         src={fblogo}
-         style={logoStyle}
-         alt="facebook"
-         />
-     </NavItem>
-     <NavItem className="nav-icon" eventKey={"twitter"}>
-       <img
-         src={twitterlogo}
-         style={logoStyle}
-         alt="twitter"
-         />
-     </NavItem>
-     <NavItem className="nav-icon" eventKey={"linkedin"}>
-       <img
-         src={linkedinlogo}
-         style={logoStyle}
-         alt="linkedin"
-         />
-     </NavItem>
-     <NavItem className="nav-icon" eventKey={"email"}>
-       <img
-         src={emaillogo}
-         style={logoStyle}
-         alt="email"
-         />
-     </NavItem>
-    </Nav>
+      <Nav pullRight onSelect={handleLink.bind(this)}>
+        <LinkContainer to="/about">
+          <NavItem eventKey={1}>About</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/students">
+          <NavItem eventKey={1}>Students</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/volunteers">
+          <NavItem eventKey={1}>Volunteers</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/events">
+          <NavItem eventKey={1}>Events</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/partners">
+          <NavItem eventKey={1}>Partners</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/meet-the-team">
+          <NavItem eventKey={1}>Meet the team</NavItem>
+        </LinkContainer>
+        <NavItem className="nav-icon" eventKey={'blog'}>
+          Blog
+        </NavItem>
+        <NavItem className="nav-icon" eventKey={'facebook'}>
+          <img src={fblogo} style={logoStyle} alt="facebook" />
+        </NavItem>
+        <NavItem className="nav-icon" eventKey={'twitter'}>
+          <img src={twitterlogo} style={logoStyle} alt="twitter" />
+        </NavItem>
+        <NavItem className="nav-icon" eventKey={'linkedin'}>
+          <img src={linkedinlogo} style={logoStyle} alt="linkedin" />
+        </NavItem>
+        <NavItem className="nav-icon" eventKey={'email'}>
+          <img src={emaillogo} style={logoStyle} alt="email" />
+        </NavItem>
+      </Nav>
     </Navbar.Collapse>
   </Navbar>
 );

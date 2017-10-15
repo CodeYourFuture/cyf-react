@@ -5,6 +5,8 @@ import { Home } from './containers/Home';
 import { Volunteers } from './pages/Volunteers';
 import { Students } from './pages/Students';
 import Event from './pages/Event';
+import { CreateEvent } from './pages/CreateEvent';
+
 import { Events } from './pages/Events';
 import { Partners } from './pages/Partners';
 import { About } from './pages/About';
@@ -19,14 +21,15 @@ export const Routes = () => (
     <div>
       <Navigation />
       <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/events" component={Events} />
-      <Route path="/event/:event_id" component={Event} />
-      <Route path="/students" component={Students} />
-      <Route path="/volunteers" component={Volunteers} />
-      <Route path="/apply/:form_type" component={Apply} />
-      <Route path="/partners" component={Partners} />
-      <Route path="/meet-the-team" component={MeetTheTeam} />
+      <Route exact path="/about" component={About} />
+      <Route exact path="/events" component={Events} />
+      <Route exact path="/events/:event_id" component={Event} />
+      <Route exact path="/event/create" component={CreateEvent} />
+      <Route exact path="/students" component={Students} />
+      <Route exact path="/volunteers" component={Volunteers} />
+      <Route exact path="/apply/:form_type" component={Apply} />
+      <Route exact path="/partners" component={Partners} />
+      <Route exact path="/meet-the-team" component={MeetTheTeam} />
       <Footer />
     </div>
   </Router>

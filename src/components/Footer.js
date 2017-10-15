@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => (
   <div className="section-container">
@@ -28,7 +28,7 @@ export const Footer = () => (
                     Alice Rowsome
                   </Link>
                 </strong>
-                &nbsp;|&nbsp;Supported with{" "}
+                &nbsp;|&nbsp;Supported with{' '}
                 <img src="/img/ico/hearts.svg" alt="LOVE" />by&nbsp;
                 <strong>
                   <Link
@@ -36,17 +36,17 @@ export const Footer = () => (
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                  HackYourFuture
+                    HackYourFuture
                   </Link>&nbsp;|&nbsp;
                 </strong>
-              Registered charity number&nbsp;
-              <Link
-                to="http://apps.charitycommission.gov.uk/Showcharity/RegisterOfCharities/CharityFramework.aspx?RegisteredCharityNumber=1174929&SubsidiaryNumber=0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                1174929
-              </Link>.
+                Registered charity number&nbsp;
+                <Link
+                  to="http://apps.charitycommission.gov.uk/Showcharity/RegisterOfCharities/CharityFramework.aspx?RegisteredCharityNumber=1174929&SubsidiaryNumber=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  1174929
+                </Link>.
               </div>
             </div>
           </div>
