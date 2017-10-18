@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import codeIcon from '../content/icons/code.svg';
 import conferenceHallIcon from '../content/icons/conference-hall.svg';
 import laptopIcon from '../content/icons/laptop.svg';
@@ -15,13 +15,19 @@ export const Support = () => (
           <br />
           <ul className="text-left">
             <li>
-              <span className="list-icon"><img src={conferenceHallIcon} alt="Space"/></span>Space
+              <span className="list-icon">
+                <img src={conferenceHallIcon} alt="Space" />
+              </span>Space
             </li>
             <li>
-              <span className="list-icon"><img src={codeIcon} alt="Mentors" /></span>Mentors (Javascript)
+              <span className="list-icon">
+                <img src={codeIcon} alt="Mentors" />
+              </span>Mentors (Javascript)
             </li>
             <li>
-              <span className="list-icon"><img src={laptopIcon} alt="Used Laptops" /></span>Used Laptops
+              <span className="list-icon">
+                <img src={laptopIcon} alt="Used Laptops" />
+              </span>Used Laptops
             </li>
           </ul>
         </div>

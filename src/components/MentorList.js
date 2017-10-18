@@ -42,7 +42,9 @@ export const MentorList = () => (
     {mentors.map(mentor => <Mentor {...mentor} />)}
 
     <CallToActionContainer>
-      <CallToAction className="big-link-3 btn" to="/volunteers">Become a volunteer</CallToAction>
+      <CallToAction className="big-link-3 btn" to="/volunteers">
+        Become a volunteer
+      </CallToAction>
     </CallToActionContainer>
   </Mentors>
 );

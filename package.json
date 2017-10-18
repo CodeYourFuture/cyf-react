@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase": "^4.3.0",
+    "moment": "^2.19.1",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.6.1",
@@ -12,9 +14,11 @@
     "styled-components": "^2.1.0"
   },
   "devDependencies": {
+    "prettier": "^1.6.1",
     "react-scripts": "1.0.7"
   },
   "scripts": {
+    "format": "prettier --write \"src/**/*.js\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

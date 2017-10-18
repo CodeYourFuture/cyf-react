@@ -1,47 +1,71 @@
 import React from 'react';
-import { TopSection } from '../components/TopSection'
-import { Event } from '../components/Event'
+import { Link } from 'react-router-dom';
+import { AuthLogin } from '../components/AuthLogin';
+import { TopSection } from '../components/TopSection';
+import { EventSummary } from '../components/EventSummary';
 
-const SomeEvents = [
-  {
-    id: '1',
-    date: 'Monday, Jun 19',
-    time: '12:00 PM',
-    location: 'Ticketmaster (Angel, London)',
-    title: 'Javascript Module 1',
-    mentors: ['Kash'],
-    sponsors: ['Ticketmaster']
-  },
-  {
-    id: '2',
-    date: 'Tuesday, Jun 20',
-    time: '12:00 PM',
-    location: 'Ticketmaster (Angel, London)',
-    title: 'Javascript Module 1',
-    mentors: [{name: 'Kash', url: ''}],
-    sponsors: [{name: 'Ticketmaster', url: ''}]
+export class Events extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      events: []
+    };
+
+    window.FirebaseInitialized
+      .database()
+      .ref('/events/')
+      .once('value')
+      .then(response => {
+        const events = [];
+
+        const value = response.val();
+
+        for (let key in value) {
+          events.push({
+            id: key,
+            ...value[key]
+          });
+        }
+
+        events.sort((a, b) => {
+          if (a.date < b.date) {
+            return -1;
+          }
+
+          if (a.date > b.date) {
+            return 1;
+          }
+
+          return 0;
+        });
+
+        this.setState({ events });
+      });
   }
-]
 
-const renderEvents = () => {
+  render() {
     return (
-      SomeEvents.map((event) => {
-        return (
-          <Event key={event.id} {...event} />
-        )
-      })
-    )
-  }
+      <div>
+        <div>
+          <TopSection
+            title="Events"
+            content="Our current classes are done every Sunday in London and Edinburgh"
+          />
 
-export const Events = () => {
-  return (
-    <div>
-      <TopSection
-        title="Events"
-        content="Our current classes are done every Sunday in London and Edinburgh"/>
-      <div className="col-sm-8 col-sm-offset-2 section-description">
-        {renderEvents()}
+          <div className="col-sm-4 col-sm-offset-4 section-description">
+            {Array.reverse(this.state.events).map(event => (
+              <EventSummary key={event.id} {...event} />
+            ))}
+
+            <AuthLogin admin={true}>
+              <Link className="big-link-3 btn" to="/event/create">
+                Create New Event
+              </Link>
+            </AuthLogin>
+          </div>
+        </div>
       </div>
-    </div>
-  )
+    );
+  }
 }

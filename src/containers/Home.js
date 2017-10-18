@@ -1,8 +1,8 @@
-import React from 'react'
-import { AsSeen } from '../components/AsSeen'
-import { Banner } from '../components/Banner'
-import { WhatWeTeach } from '../components/WhatWeTeach'
-import { Video } from '../components/Video'
+import React from 'react';
+import { AsSeen } from '../components/AsSeen';
+import { Banner } from '../components/Banner';
+import { WhatWeTeach } from '../components/WhatWeTeach';
+import { Video } from '../components/Video';
 
 export const Home = () => (
   <div className="Home">
@@ -13,5 +13,4 @@ export const Home = () => (
     <WhatWeTeach />
     <AsSeen />
   </div>
-)
-
+);
