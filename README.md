@@ -22,7 +22,7 @@ $ yarn build # to build index to ./public
 To present merge your changes to `staging` branch. CI will build and then deploy it to GitHub pages (check web-static-[staging,production] repos):
 
 Currently, there is only one release candidate branch `staging` accessible on:
-- [staging.codeyourfuture.co](http://staging.codeyourfuture.co)
+- [staging.codeyourfuture.io](http://staging.codeyourfuture.io)
 
 ## Contribute
 
@@ -30,7 +30,7 @@ Development workflow is tracked on [CYF Web](https://trello.com/b/wLDcxrly/cyf-w
 
 If you found an error, got idea for improvement, or new feature you can submit a new ticket to `Ideas`.
 
-To get access to Trello `admin[at]codeyourfuture.co`, or let us know on Slack and we will add you to the project.
+To get access to Trello `admin[at]codeyourfuture.io`, or let us know on Slack and we will add you to the project.
 
 To contribute please follow instructions:
 
@@ -40,10 +40,10 @@ To contribute please follow instructions:
 - when you're finished, submit a PR to the `staging` branch for review and move the task to `In Review` list (currently, we have only one review environment, so if you see another PR make sure its safe to merge to `staging`)
 - the code is approved by adding _LGTM_ to comment
 - after the PR is approved the reviewer, or contributor merges PR
-- after merging and a successful deploy, get someone to review the page in the (staging environment)[staging.codeyourfuture.co], to make sure that everything works
+- after merging and a successful deploy, get someone to review the page in the (staging environment)[staging.codeyourfuture.io], to make sure that everything works
 - Then, submit a PR from `staging` to `master`
 - when the PR is merged to master, automatic build on CircleCI deploys the website
-- briefly look on the web to see your changes are fine; [http://codeyourfuture.co/](http://codeyourfuture.co/)
+- briefly look on the web to see your changes are fine; [http://codeyourfuture.io/](http://codeyourfuture.io/)
 - move task fro in `Review` to `Done`
 
 Thank you.

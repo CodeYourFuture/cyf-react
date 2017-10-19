@@ -11,7 +11,7 @@ const PartnersText = (
     <p>Together we’ll help to solve both of these issues.</p>
 
     <div className="section-bottom-link">
-      <Link className="big-link-3 btn" to="mailto:contact@codeyourfuture.co?subject=Interested in partnership">Get in Touch</Link>
+      <Link className="big-link-3 btn" to="mailto:contact@codeyourfuture.io?subject=Interested in partnership">Get in Touch</Link>
     </div>
   </div>
 );

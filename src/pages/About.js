@@ -11,7 +11,7 @@ const AboutText = (
     <p>Last year we launched the first cohort of our  6-month web development programme, coached by a group of professional developers. Today we are running new classes in London and Glasgow. This is <strong>just the beginning</strong>. With your help we will be expanding to other regions and cities.</p>
     <p>If you are interested in participating as a <Link to="students">student</Link>, <Link to="volunteers">coach or volunteer</Link>, sign up!</p>
     <p>
-    For all other inquiries please contact us at <Link to="mailto:contact@codeyourfuture.co" title="Contact us">contact@codeyourfuture.co</Link>
+    For all other inquiries please contact us at <Link to="mailto:contact@codeyourfuture.io" title="Contact us">contact@codeyourfuture.io</Link>
     <br /><br />
     </p>
   </div>
