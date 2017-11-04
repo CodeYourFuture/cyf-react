@@ -1,4 +1,4 @@
-# Code Yor Future
+# Code Your Future
 ---
 
 [![CircleCI](https://circleci.com/gh/CodeYourFuture/cyf-react.svg?style=svg)](https://circleci.com/gh/CodeYourFuture/cyf-react)

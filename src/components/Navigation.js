@@ -25,7 +25,7 @@ const handleLink = linkName => {
   let URL = '';
   switch (linkName) {
     case 'facebook':
-      URL = 'https://www.facebook.com/codeyourfuture.co';
+      URL = 'https://www.facebook.com/codeyourfuture.io';
       break;
     case 'twitter':
       URL = 'https://twitter.com/CodeYourFuture_';
