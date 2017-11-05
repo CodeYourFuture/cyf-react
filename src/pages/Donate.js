@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { TopSection } from '../components/TopSection';
-import DonationPicker from '../components/DonationPicker';
+import { TopSection } from '../components/top-section';
+import DonationPicker from '../components/donation-picker';
 import * as axios from 'axios';
 
 export class Donate extends React.Component {
@@ -15,6 +15,10 @@ export class Donate extends React.Component {
         await axios.post(process.env.REACT_APP_DONATION_ENDPOINT, {
           token,
           amount,
+        }, {
+          headers: {
+            'Access-Control-Allow-Origin' : '*',
+          }
         });
         this.setState({tokenSuccess: true});
       } catch (e) {
