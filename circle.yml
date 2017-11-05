@@ -1,23 +1,43 @@
-machine:
-  node:
-    version: 6.11.4
-dependencies:
-  override:
-    - npm install yarn
-    - yarn install
-test:
-  override:
-    - yarn test
-deployment:
-  staging:
-    branch: staging
-    commands:
-      - npm install yarn
-      - yarn build
-      - ./ci/deploy.sh staging
-  production:
-    branch: master
-    commands:
-      - npm install yarn
-      - yarn build
-      - ./ci/deploy.sh production
+version: 2
+jobs:
+  build:
+    working_directory: ~/cyf-react
+    docker:
+      - image: circleci/node:6.10.3
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-dependencies-{{ checksum "yarn.lock" }}
+      - run:
+          name: Yarn setup
+          command: |
+            sudo npm install -g yarn
+            yarn
+      - save_cache:
+          key: yarn-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - "node_modules"
+      - run:
+          name: Test
+          command: |
+            yarn test
+      - restore_cache:
+          keys:
+            - yarn-lambda-dependencies-{{ checksum "lambda/yarn.lock" }}
+      - deploy:
+          name: Deploy
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "staging" ];
+            then
+                ./ci/deploy.sh staging
+            fi
+
+            if [ "${CIRCLE_BRANCH}" == "master" ];
+            then
+                ./ci/deploy.sh production
+            fi
+      - save_cache:
+          key: yarn-lambda-dependencies-{{ checksum "lambda/yarn.lock" }}
+          paths:
+            - "lambda/node_modules"
