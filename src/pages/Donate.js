@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { TopSection } from '../components/top-section';
+import TopSection from '../components/top-section';
 import DonationPicker from '../components/donation-picker';
 import * as axios from 'axios';
 
