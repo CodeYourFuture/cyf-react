@@ -1,6 +1,5 @@
 // config
 const STRIPE_PRIVATE = process.env.STRIPE_PRIVATE;
-const STRIPE_PUBLIC = process.env.STRIPE_PUBLIC;
 
 // deps
 const stripe = require('stripe')(STRIPE_PRIVATE);
