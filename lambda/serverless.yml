@@ -6,12 +6,16 @@ provider:
   region: eu-west-1
   prod: prod
 
+  iamRoleStatements:
+    - Effect: Allow
+      Action: ssm:GetParameters
+      Resource: '*'
 
 functions:
 
   donate:
-    environment: ${file(env.yml):${opt:stage}}
     handler: handler.stripe
+    environment: ${file(env.yml):${opt:stage}}
     description: Handles Stripe requests
     events:
       - http:

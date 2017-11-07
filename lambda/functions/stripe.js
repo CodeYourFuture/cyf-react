@@ -1,5 +1,7 @@
+const client = require('../tools/ssm');
+
 // config
-const STRIPE_PRIVATE = process.env.STRIPE_PRIVATE;
+const STRIPE_PRIVATE = ssm.getParameter(process.env.STRIPE_PRIVATE);
 
 // deps
 const stripe = require('stripe')(STRIPE_PRIVATE);
