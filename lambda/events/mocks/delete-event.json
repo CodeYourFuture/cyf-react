@@ -1,0 +1,10 @@
+{
+  "pathParameters": {
+    "id": "8acd7530-c7dd-11e7-b484-79f419ab582a"
+  },
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "CYFMentor"
+    }
+  }
+}
