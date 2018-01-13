@@ -9,7 +9,6 @@
     "country-list": "^1.1.0",
     "emotion": "^8.0.9",
     "feature-toggle": "^0.3.0",
-    "firebase": "^4.3.0",
     "moment": "^2.19.1",
     "prop-types": "^15.6.0",
     "react": "^15.6.1",
@@ -29,7 +28,7 @@
     "autoprefixer": "7.1.0",
     "babel-cli": "^6.26.0",
     "babel-core": "6.24.1",
-    "babel-eslint": "7.2.3",
+    "babel-eslint": "8.1.1",
     "babel-jest": "20.0.3",
     "babel-loader": "7.0.0",
     "babel-preset-flow": "^6.23.0",
@@ -75,10 +74,7 @@
     "webpack-manifest-plugin": "1.1.0",
     "whatwg-fetch": "2.0.3"
   },
-  "precommit": [
-    "format",
-    "flow"
-  ],
+  "precommit": ["format", "flow"],
   "scripts": {
     "format": "prettier --write \"src/**/*.js\"",
     "start": "node scripts/start.js",
@@ -89,12 +85,8 @@
     "lint:js": "eslint '**/*.js'"
   },
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "<rootDir>/config/browserMocks.js"
@@ -111,17 +103,12 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     }
   },
   "babel": {
-    "presets": [
-      "react-app",
-      "flow"
-    ]
+    "presets": ["react-app", "flow"]
   }
 }

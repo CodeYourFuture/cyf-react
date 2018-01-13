@@ -16,6 +16,9 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
+    "jsonwebtoken": "^8.1.0",
+    "jwk-to-pem": "^1.2.6",
+    "request": "^2.83.0",
     "uuid": "^3.1.0"
   }
 }

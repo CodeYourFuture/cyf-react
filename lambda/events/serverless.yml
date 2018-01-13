@@ -25,14 +25,25 @@ provider:
       Resource: "arn:aws:dynamodb:eu-west-2:*:*"
 
 functions:
+  auth:
+    handler: functions/auth.authorize
   create:
     handler: functions/create.main
     events:
       - http:
           path: events
           method: post
-          cors: true
-          authorizer: aws_iam
+          # cors: true
+          authorizer: auth
+          cors:
+            origins:
+              - '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
 
   get:
     handler: functions/get.main
@@ -50,7 +61,6 @@ functions:
           path: events
           method: get
           cors: true
-          authorizer: aws_iam
 
   update:
     handler: functions/update.main
