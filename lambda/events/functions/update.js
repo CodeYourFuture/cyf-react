@@ -19,6 +19,7 @@ export async function main(event, context, callback) {
   };
 
   try {
+    // eslint-disable-next-line no-unused-vars
     const result = await dynamoDbLib.call('update', params);
     callback(null, success({ status: true }));
   } catch (e) {

@@ -74,7 +74,7 @@
     "webpack-manifest-plugin": "1.1.0",
     "whatwg-fetch": "2.0.3"
   },
-  "precommit": ["format", "flow"],
+  "precommit": ["format", "lint", "flow"],
   "scripts": {
     "format": "prettier --write \"src/**/*.js\"",
     "start": "node scripts/start.js",
