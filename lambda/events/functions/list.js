@@ -7,7 +7,8 @@ export async function main(event, context, callback) {
     TableName: 'events',
     KeyConditionExpression: 'userId = :userId',
     ExpressionAttributeValues: {
-      ':userId': event.requestContext.identity.cognitoIdentityId,
+      // ':userId': event.requestContext.identity.cognitoIdentityId,
+      ':userId': 'CYFMentor',
     },
   };
   try {
