@@ -12,8 +12,8 @@ This is the official CYF website live at [codeyourfuture.io](https://codeyourfut
 ## Setup
 
 ```bash
-$ yarn start # start development env
-$ yarn build # to build index to ./public
+$ yarn # install project dependencies
+$ yarn start # start application on localhost:3000
 ```
 
 ## Present
@@ -25,11 +25,9 @@ Currently, there is only one release candidate branch `staging` accessible on:
 
 ## Contribute
 
-Development workflow is tracked on [CYF Web](https://trello.com/b/wLDcxrly/cyf-web) Trello board. There are lists with tasks and their states, e.g. `Todo`, `In Progress`, `In Review` and `Done`
+Development workflow is tracked on [CYF Github Project](https://github.com/CodeYourFuture/cyf-react/projects/1)
 
-If you found an error, got idea for improvement, or new feature you can submit a new ticket to `Ideas`.
-
-To get access to Trello `admin[at]codeyourfuture.io`, or let us know on Slack and we will add you to the project.
+Github issues for errors or improvements are welcomed.
 
 To contribute please follow instructions:
 
