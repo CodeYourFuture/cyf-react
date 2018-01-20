@@ -34,8 +34,11 @@ exports[`Volunteers Page renders correctly 1`] = `
       title="Become a Volunteer"
     />
   </Styled(div)>
-  <div
-    className="mentors-hero-wrap"
-  />
+  <div>
+    <img
+      alt="code-your-future-mentors"
+      src="mentors-group.jpg"
+    />
+  </div>
 </div>
 `;
