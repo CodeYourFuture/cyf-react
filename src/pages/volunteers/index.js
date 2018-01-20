@@ -1,54 +1,35 @@
+// @flow
 import React from 'react';
-import { Link } from 'react-router-dom';
-import TopSection from '../../components/top-section';
-import BottomSection from '../../components/bottom-section';
+import InnerContainer from '../../components/inner-container';
+import SectionBody from '../../components/section-body';
+import SectionHeading from '../../components/section-heading';
+import CYFLink from '../../components/link';
+import Divider from '../../components/divider';
+import Content from '../../content/volunteers';
 import mentors from '../../assets/images/mentors-group.jpg';
 
-const Volunteers = () => {
-  const volunteersText = (
+const Volunteers = () => (
+  <div>
+    <InnerContainer>
+      <SectionHeading>
+        <h2>{Content.Volunteers.Heading}</h2>
+      </SectionHeading>
+      <Divider />
+      <SectionBody>
+        <p>{Content.Volunteers.Body.One}</p>
+        <p>{Content.Volunteers.Body.Two}</p>
+        <p>{Content.Volunteers.Body.Three}</p>
+      </SectionBody>
+      <CYFLink path="/apply/mentor" title="Become a Mentor" />
+      <SectionBody>
+        <p>{Content.Volunteers.Body.Four}</p>
+      </SectionBody>
+      <CYFLink path="/apply/volunteer" title="Become a Volunteer" />
+    </InnerContainer>
     <div>
-      <p>
-        Welcome to a community where your knowledge and experience will help to
-        transform the lives of refugees in the UK.
-      </p>
-      <p>
-        We are looking for experienced web developers (HTML/CSS, JavaScript,
-        Node, Angular, React, Database) to participate in our classes.
-      </p>
-      <p>
-        We are also looking for technology managers and entrepreneurs to give
-        workshops on modern software practices and methodologies.
-      </p>
-
-      <div className="section-bottom-link">
-        <Link
-          className="big-link-3 btn"
-          to="/apply/mentor"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Become a Mentor
-        </Link>
-      </div>
-
-      <p>
-        Or you can become a volunteer and help us support the expansion of the
-        organisation. No matter where you are in the UK, with your help we’ll
-        create a local program to serve local refugee communities.
-      </p>
-
-      <BottomSection link="/apply/volunteer" linkText="Become a Volunteer" />
+      <img src={mentors} alt="code-your-future-mentors" />
     </div>
-  );
-
-  return (
-    <div>
-      <TopSection title="Join Us" content={volunteersText} />
-      <div>
-        <img src={mentors} alt="code-your-future-mentors" />
-      </div>
-    </div>
-  );
-};
+  </div>
+);
 
 export default Volunteers;
