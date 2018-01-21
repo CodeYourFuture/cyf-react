@@ -10,13 +10,17 @@ export async function main(event, context, callback) {
     Item: {
       userId: event.requestContext.identity.cognitoIdentityId || 'CYFMentor',
       eventId: uuid.v1(),
-      title: data.body.title,
-      description: data.body.description,
+      createdAt: new Date().getTime(),
+      city: data.body.city,
       startDate: data.body.startDate,
       endDate: data.body.endDate,
-      city: data.body.city,
       location: data.body.location,
-      createdAt: new Date().getTime(),
+      intake: data.body.intake,
+      topic: data.body.topic,
+      description: data.body.description,
+      moduleLeaders: data.body.moduleLeaders,
+      mentors: data.body.mentors,
+      links: data.body.links,
     },
   };
 
