@@ -9,8 +9,8 @@ custom:
 provider:
   name: aws
   runtime: nodejs6.10
-  stage: prod
-  region: eu-west-2
+  stage: "${env:ENVIRONMENT}"
+  region: "${env:REGION}"
 
   iamRoleStatements:
     - Effect: Allow
@@ -23,11 +23,14 @@ provider:
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
       Resource: "arn:aws:dynamodb:eu-west-2:*:*"
+      # Resource: "arn:aws:dynamodb:${env:REGION}:*:*"
 
 functions:
   auth:
+    name: "${self:service}-auth-${self:provider.stage}"
     handler: functions/auth.authorize
   create:
+    name: "${self:service}-create-${self:provider.stage}"
     handler: functions/create.main
     events:
       - http:
@@ -45,6 +48,7 @@ functions:
               - X-Amz-Security-Token
 
   get:
+    name: "${self:service}-get-${self:provider.stage}"
     handler: functions/get.main
     events:
       - http:
@@ -54,6 +58,7 @@ functions:
           authorizer: aws_iam
 
   list:
+    name: "${self:service}-list-${self:provider.stage}"
     handler: functions/list.main
     events:
       - http:
@@ -62,6 +67,7 @@ functions:
           cors: true
 
   update:
+    name: "${self:service}-update-${self:provider.stage}"
     handler: functions/update.main
     events:
        - http:
@@ -71,6 +77,7 @@ functions:
            authorizer: aws_iam
 
   delete:
+    name: "${self:service}-delete-${self:provider.stage}"
     handler: functions/delete.main
     events:
        - http:
