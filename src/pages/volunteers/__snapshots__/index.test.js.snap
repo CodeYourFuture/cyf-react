@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Volunteers Page renders correctly 1`] = `
+<div>
+  <Styled(div)>
+    <SectionHeading>
+      <h2>
+        Join Us
+      </h2>
+    </SectionHeading>
+    <Divider />
+    <SectionBody>
+      <p>
+        Welcome to a community where your knowledge and experience will help to transform the lives of refugees in the UK.
+      </p>
+      <p>
+        We are looking for experienced web developers (HTML/CSS, JavaScript, Node, Angular, React, Database) to participate in our classes.
+      </p>
+      <p>
+        We are also looking for technology managers and entrepreneurs to give workshops on modern software practices and methodologies.
+      </p>
+    </SectionBody>
+    <CYFLink
+      path="/apply/mentor"
+      title="Become a Mentor"
+    />
+    <SectionBody>
+      <p>
+        Or you can become a volunteer and help us support the expansion of the organisation. No matter where you are in the UK, with your help we’ll create a local program to serve local refugee communities.
+      </p>
+    </SectionBody>
+    <CYFLink
+      path="/apply/volunteer"
+      title="Become a Volunteer"
+    />
+  </Styled(div)>
+  <div>
+    <img
+      alt="code-your-future-mentors"
+      src="mentors-group.jpg"
+    />
+  </div>
+</div>
+`;
