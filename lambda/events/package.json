@@ -2,6 +2,10 @@
   "name": "events-service",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "deploy-staging":
+      "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY serverless deploy -s staging"
+  },
   "license": "MIT",
   "devDependencies": {
     "aws-sdk": "^2.149.0",
