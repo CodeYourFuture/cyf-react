@@ -1,4 +1,5 @@
 import React from 'react';
+import { StripeProvider } from 'react-stripe-elements';
 import * as axios from 'axios';
 import styled from 'react-emotion';
 import DonationPicker from '../../components/donation-picker';
@@ -63,6 +64,7 @@ class Donate extends React.Component {
 
   onTokenSuccess = async (token, amount) => {
     try {
+      console.log({ token });
       await axios.post(
         process.env.REACT_APP_DONATION_ENDPOINT,
         {

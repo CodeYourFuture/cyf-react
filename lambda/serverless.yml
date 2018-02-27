@@ -40,6 +40,26 @@ functions:
               - X-Amz-User-Agent
               - Access-Control-Allow-Origin
 
+  donate_recurring:
+    handler: handler.stripeRecurring
+    environment: ${file(env.donate.yml):${opt:stage}}
+    description: Handles Stripe Recurring Payment subscriptions.
+    events:
+      - http:
+          path: donate_recurring
+          method: POST
+          integration: lambda
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+              - Access-Control-Allow-Origin
+
   pipedrive:
     handler: handler.pipedrive
     environment: ${file(env.pipedrive.yml):${opt:stage}}

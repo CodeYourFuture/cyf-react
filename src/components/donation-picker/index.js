@@ -1,4 +1,5 @@
 import React from 'react';
+import { Elements } from 'react-stripe-elements';
 import { FormControl, InputGroup, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
@@ -44,7 +45,7 @@ const DonationLabel = styled('div')`
   align-items: center;
   height: 80px;
   font-weight: 1000;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   padding: 16px;
 `;
 
@@ -60,12 +61,12 @@ const DonationBox = styled('div')`
 `;
 
 const InputContainer = styled('div')`
-  width: 90%;
+  width: 85%;
   margin-bottom: 24px;
 `;
 
 const DonateButton = styled(Button)`
-  width: 90%;
+  width: 85%;
   font-size: 2.2rem;
   font-weight: 900;
   height: 200px;
@@ -155,12 +156,12 @@ class DonationPicker extends React.Component {
               <InputContainer>
                 <InputGroup
                   style={{
-                    'font-size': '2.2rem',
+                    'font-size': '2rem',
                   }}
                 >
                   <InputGroup.Addon
                     style={{
-                      'font-size': '2.2rem',
+                      'font-size': '2rem',
                     }}
                   >
                     &pound;
@@ -171,7 +172,7 @@ class DonationPicker extends React.Component {
                     onChange={this.updateAmount}
                     style={{
                       height: '60px',
-                      'font-size': '2.2rem',
+                      'font-size': '2rem',
                     }}
                   />
                 </InputGroup>
