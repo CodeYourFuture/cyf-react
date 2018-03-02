@@ -16,22 +16,8 @@ exports[`Banner Component renders 1`] = `
     <div
       className="page-title-bottom-link"
     >
-      <Link
-        className="big-link-2 btn"
-        replace={false}
-        to="students"
-      >
-        Apply Now
-      </Link>
-      <Link
-        className="big-link-2 btn"
-        rel="noopener noreferrer"
-        replace={false}
-        target="_blank"
-        to="volunteers"
-      >
-        Become a volunteer
-      </Link>
+      <withRouter() />
+      <withRouter() />
     </div>
   </Styled(div)>
 </Styled(div)>
