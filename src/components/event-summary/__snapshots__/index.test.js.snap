@@ -41,7 +41,7 @@ exports[`EventSummary renders correctly 1`] = `
       <div
         className="small-9 medium-10 columns"
       >
-        Nov 5th, 12:00 pm
+        Nov 5th, 2:00 pm
       </div>
       <div
         className="small-9 medium-10 columns"
