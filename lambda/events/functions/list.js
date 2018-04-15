@@ -3,7 +3,7 @@ import { success, failure } from '../libs/response-lib';
 
 // eslint-disable-next-line import/prefer-default-export
 export async function main(event, context, callback) {
-  const params = { TableName: dynamoDbLib.tableName(), };
+  const params = { TableName: dynamoDbLib.tableName() };
 
   try {
     const result = await dynamoDbLib.call('scan', params);

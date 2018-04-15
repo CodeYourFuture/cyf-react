@@ -10,9 +10,11 @@ export function call(action, params) {
 
 export function tableName() {
   if (process.env.ENVIRONMENT === 'production') {
-    return 'production-events'
+    return 'production-events';
   } else if (process.env.ENVIRONMENT === 'staging') {
-    return 'staging-events'
+    return 'staging-events';
+  } else if (process.env.ENVIRONMENT === 'dev') {
+    return 'dev-events';
   }
 
   return 'events';

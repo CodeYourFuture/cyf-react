@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { MemoryRouter } from 'react-router';
+import renderer from 'react-test-renderer';
 
 import { EventPage } from './';
 
@@ -15,11 +16,7 @@ const mockEvent = {
     },
   ],
   location: 'Ticketmaster',
-  mentors: [
-    { name: 'Matt', avatar: 'www.something.com' },
-    { name: 'Jun', avatar: 'www.somthing.com' },
-    { name: 'Felix', avatar: 'www.somthing.com' },
-  ],
+  mentors: [],
   moduleLeaders: [{ name: 'Kash', avatar: 'something' }],
   startDate: '1515851599504',
   topic: 'Week 4 - Hello Javascript',
@@ -27,6 +24,18 @@ const mockEvent = {
 
 describe('Event Component', () => {
   it('renders', () => {
-    expect(shallow(<EventPage {...mockEvent} />)).toMatchSnapshot();
+    const mockAuth = {
+      isAuthenticated: () => true,
+      getUserID: () => 'user|12345',
+    };
+    expect(
+      renderer
+        .create(
+          <MemoryRouter>
+            <EventPage {...mockEvent} auth={mockAuth} />
+          </MemoryRouter>,
+        )
+        .toJSON(),
+    ).toMatchSnapshot();
   });
 });

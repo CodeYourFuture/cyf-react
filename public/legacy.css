@@ -9324,7 +9324,7 @@ input[type="text"]:-ms-input-placeholder, textarea:-ms-input-placeholder, textar
 input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder {
   color: #999; }
 
-button.btn {
+button {
   height: 52px;
   margin: 0;
   padding: 0 20px;

@@ -3,6 +3,7 @@ service: cyf-events-api
 plugins:
   - serverless-webpack
   - serverless-offline
+  - serverless-dynamodb-local
 
 custom:
   webpackIncludeModules: true

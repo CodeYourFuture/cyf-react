@@ -3,19 +3,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import setFeatures from 'feature-toggle';
 import type { Auth } from '../../types';
+import LoginButton from '../LoginButton';
 
 import cyflogo from '../../assets/images/logos/cyf_brand.png';
 
 const cyflogoStyle = {
   width: '158px',
   height: '50px',
-};
-
-const login = {
-  display: 'inline-block',
-  width: '90px',
 };
 
 const handleLink = linkName => {
@@ -72,20 +67,7 @@ const Navigation = ({ auth }: Props) => (
             <strong style={{ color: '#2ba560' }}>Donate</strong>
           </NavItem>
         </LinkContainer>
-        {setFeatures().active('login') && (
-          <div style={login}>
-            {!auth.isAuthenticated() && (
-              <button type="button" onClick={auth.login}>
-                Log In
-              </button>
-            )}
-            {auth.isAuthenticated() && (
-              <button type="button" onClick={auth.logout}>
-                Log Out
-              </button>
-            )}
-          </div>
-        )}
+        <LoginButton auth={auth} />
       </Nav>
     </Navbar.Collapse>
   </Navbar>

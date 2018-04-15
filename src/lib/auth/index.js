@@ -25,18 +25,28 @@ class Auth {
   }
 
   login() {
+    localStorage.setItem('authCallback', window.location.href);
     this.auth0.authorize();
+  }
+
+  redirect() {
+    const authCallback = localStorage.getItem('authCallback');
+    if (authCallback) {
+      window.location.href = authCallback;
+    } else {
+      history.replace('/');
+    }
   }
 
   handleAuthentication() {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        history.replace('/');
+        this.redirect();
       } else if (err) {
-        history.replace('/');
         // eslint-disable-next-line no-console
         console.log(err);
+        this.redirect();
       }
     });
   }
@@ -49,7 +59,16 @@ class Auth {
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
+    localStorage.setItem('sub', authResult.idTokenPayload.sub);
     history.replace('/home');
+  }
+
+  getUserID() {
+    const value = localStorage.getItem('sub');
+    if (!value) {
+      throw new Error('No sub found');
+    }
+    return value;
   }
 
   getAccessToken() {

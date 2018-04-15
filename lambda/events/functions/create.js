@@ -17,6 +17,7 @@ export async function main(event, context, callback) {
       endTime: data.endTime,
       description: data.description,
       title: data.title,
+      mentors: [],
     },
   };
 

@@ -1,8 +1,14 @@
 import React from 'react';
 import { css } from 'emotion';
 import moment from 'moment';
-import ProfileSnippet from '../../components/profile-snippet';
+import { Button } from 'react-bootstrap';
+import { addMentor } from '../../lib/events';
 import type { CYFEvent } from '../../types';
+import type Auth from '../../lib/auth';
+import BackToEvent from './BackToEvent';
+import Description from './Description';
+import Location from './Location';
+import LoginButton from '../LoginButton';
 
 const desktopMq = `@media (min-width: 840px)`;
 
@@ -52,19 +58,6 @@ const dateContainer = css({
     lineHeight: '1.56',
   },
 });
-
-const addressContainer = css({
-  color: '#777',
-  marginBottom: '32px',
-  lineHeight: '1.4',
-  fontSize: '18px',
-  fontWeight: '400',
-  [desktopMq]: {
-    fontSize: '18px',
-    lineHeight: '1.56',
-  },
-});
-
 const attendeeContainer = css({
   marginBottom: '36px',
   h3: {
@@ -83,58 +76,22 @@ const attendeeContainer = css({
   },
 });
 
-const eventDescription = css({
-  marginBottom: '16px',
-  fontSize: '16px',
-  lineHeight: '1.5',
-  maxWidth: '580px',
-});
-
-// const attendButton = css({
-//   fontSize: '18px',
-//   fontWeight: '400',
-//   lineHeight: '1.33',
-//   color: '#2ba560',
-//   padding: '8px 16px',
-//   backgroundColor: 'white',
-//   border: '1px solid #2ba560',
-//   borderRadius: '8px',
-//   ':hover': {
-//     backgroundColor: '#207e49',
-//     color: '#fff',
-//   },
-//   ':active': {
-//     backgroundColor: '#2ba560',
-//     color: '#fff',
-//   },
-// });
-
-const backToEventLink = css({
-  lineHeight: '1.5',
-  fontSize: '16px',
+const attendButton = css({
+  fontSize: '18px',
   fontWeight: '400',
-  color: '#333',
-  marginTop: '32px',
-  borderBottom: '1px solid',
-  display: 'inline-block',
-  paddingBottom: '3px',
-});
-
-const attendeeList = css({
-  display: 'flex',
-  listStyle: 'none',
-  flexDirection: 'column',
-  flexWrap: 'wrap',
-  padding: 0,
-  maxWidth: '580px',
-  '@media (min-width: 510px)': {
-    flexDirection: 'row',
+  lineHeight: '1.33',
+  color: '#2ba560',
+  padding: '8px 16px',
+  backgroundColor: 'white',
+  border: '1px solid #2ba560',
+  borderRadius: '8px',
+  ':hover': {
+    backgroundColor: '#207e49',
+    color: '#fff',
   },
-});
-
-const attendeeListItem = css({
-  '@media (min-width: 510px)': {
-    width: '50%',
+  ':active': {
+    backgroundColor: '#2ba560',
+    color: '#fff',
   },
 });
 
@@ -146,79 +103,72 @@ const divider = css({
   },
 });
 
-const EventDetail = ({
-  date,
-  description,
-  topic,
-  location,
-  mentors,
-  moduleLeaders,
-  startTime,
-  endTime,
-}: CYFEvent) => (
-  <div className={container}>
-    <h1>{topic}</h1>
-    <p className={dateContainer}>
-      <span>{moment(date).format('LL')}</span>
-      <span>
-        {startTime} - {endTime}
-      </span>
-    </p>
-    <div className={addressContainer}>
-      <p>
-        <span>{location}</span>
-      </p>
-    </div>
-    <section className={attendeeContainer}>
-      {/* <h3>
-        <span>Attendees </span>
-        <span>
-          ({mentors && moduleLeaders && mentors.length + moduleLeaders.length})
-        </span>
-      </h3> */}
-      <ul className={attendeeList}>
-        {moduleLeaders &&
-          moduleLeaders.map(mentor => (
-            <li className={attendeeListItem}>
-              <ProfileSnippet
-                avatar={mentor.avatar}
-                name={mentor.name}
-                cyfRole="Module leader"
-              />
-            </li>
-          ))}
-        {mentors &&
-          mentors.map(mentor => (
-            <li className={attendeeListItem}>
-              <ProfileSnippet
-                avatar={mentor.avatar}
-                name={mentor.name}
-                cyfRole="Mentor"
-              />
-            </li>
-          ))}
-      </ul>
-    </section>
-    <hr className={divider} />
-    <p className={eventDescription}>
-      {description &&
-        description.split('\n').map(text => (
-          <React.Fragment>
-            {text}
-            <br />
-          </React.Fragment>
-        ))}
-    </p>
+function renderAttending(auth: Auth, mentors: string[], attendClick: Function) {
+  if (auth.isAuthenticated()) {
+    if (mentors.includes(auth.getUserID())) {
+      return <div>You&#39;re attending! See you there!</div>;
+    }
+    return (
+      <Button className={attendButton} onClick={attendClick}>
+        Attend this event
+      </Button>
+    );
+  }
+  return (
     <div>
-      {/* This is being hidden until the 'attend an event function is up and running */}
-      {/* <button className={attendButton}>Attend this event</button> */}
+      Want to attend? Login to register.<br />
+      <LoginButton auth={auth} />
     </div>
-    <div>
-      <a href="/events" className={backToEventLink}>
-        Back to event listing
-      </a>
-    </div>
-  </div>
-);
+  );
+}
+
+type Props = CYFEvent & { auth: Auth };
+
+class EventDetail extends React.Component<Props, { mentors: string[] }> {
+  state = { mentors: this.props.mentors || [] };
+
+  attendClick = () => {
+    const { mentors = [], auth, eventId } = this.props;
+    const newMentors = [...mentors, auth.getUserID()];
+    this.setState({ mentors: newMentors });
+    addMentor(newMentors, eventId);
+  };
+
+  render() {
+    const {
+      date,
+      description,
+      topic,
+      location,
+      startTime,
+      endTime,
+      auth,
+    } = this.props;
+
+    const { mentors } = this.state;
+
+    return (
+      <div className={container}>
+        <h1>{topic}</h1>
+        <p className={dateContainer}>
+          <span>{moment(date).format('LL')}</span>
+          <span>
+            {startTime} - {endTime}
+          </span>
+        </p>
+        <Location location={location} />
+        <section className={attendeeContainer}>
+          <h5>Volunteers: {(mentors || []).length}</h5>
+          {renderAttending(auth, mentors, this.attendClick)}
+        </section>
+        <hr className={divider} />
+        <Description description={description} />
+        <div>
+          <BackToEvent />
+        </div>
+      </div>
+    );
+  }
+}
 
 export default EventDetail;

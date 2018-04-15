@@ -39,7 +39,11 @@ const Routes = () => (
       <Route exact path="/about" component={About} />
       <Route exact path="/events" component={Events} />
       <Route exact path="/event/create" component={CreateEvent} />
-      <Route exact path="/events/:event_id" component={Event} />
+      <Route
+        exact
+        path="/events/:event_id"
+        render={props => <Event {...props} auth={auth} />}
+      />
       <Route exact path="/students" component={Students} />
       <Route exact path="/students.html" component={Students} />
       <Route exact path="/volunteers" component={Volunteers} />

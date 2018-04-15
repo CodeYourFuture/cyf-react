@@ -1,48 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Event Component renders 1`] = `
-<Styled(div)>
-  <Styled(div)>
-    <EventDetail
-      city="London"
-      description="First bit of javascript"
-      endDate="1515851599504"
-      intake="London Class 3"
-      links={
-        Array [
-          Object {
-            "course materials": "https://codeyourfuture.github.io/syllabus-master/js-core/week-04/lesson.html",
-          },
-        ]
-      }
-      location="Ticketmaster"
-      mentors={
-        Array [
-          Object {
-            "avatar": "www.something.com",
-            "name": "Matt",
-          },
-          Object {
-            "avatar": "www.somthing.com",
-            "name": "Jun",
-          },
-          Object {
-            "avatar": "www.somthing.com",
-            "name": "Felix",
-          },
-        ]
-      }
-      moduleLeaders={
-        Array [
-          Object {
-            "avatar": "something",
-            "name": "Kash",
-          },
-        ]
-      }
-      startDate="1515851599504"
-      topic="Week 4 - Hello Javascript"
-    />
-  </Styled(div)>
-</Styled(div)>
+<div
+  className="css-1ebjmhl"
+>
+  <div
+    className="css-1rheyj1"
+  >
+    <div
+      className="css-1f11qlz"
+    >
+      <h1 />
+      <p
+        className="css-a0s8e9"
+      >
+        <span>
+          April 15, 2018
+        </span>
+        <span>
+           - 
+        </span>
+      </p>
+      <div
+        className="css-hroent"
+      >
+        <p>
+          <span />
+        </p>
+      </div>
+      <section
+        className="css-1thas9u"
+      >
+        <h5>
+          Volunteers: 
+          0
+        </h5>
+        <button
+          className="css-1b7napj btn btn-default"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Attend this event
+        </button>
+      </section>
+      <hr
+        className="css-1d8iqsy"
+      />
+      <p
+        className="css-ofsyx7"
+      />
+      <div>
+        <a
+          className="css-t25ae"
+          href="/events"
+          onClick={[Function]}
+        >
+          Back to event listing
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 `;

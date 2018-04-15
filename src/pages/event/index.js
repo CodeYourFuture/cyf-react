@@ -5,16 +5,16 @@ import EventDetail from '../../components/event-detail';
 import Spinner from '../../components/spinner';
 import { fetchEvent } from '../../lib/events';
 import type { CYFEvent } from '../../types';
+import type Auth from '../lib/auth';
 
-export const EventPage = (event: CYFEvent) => (
+export const EventPage = ({ event, auth }: { event: CYFEvent, auth: Auth }) => (
   <Page>
     <InnerContainer>
-      <EventDetail {...event} />
+      <EventDetail {...event} auth={auth} />
     </InnerContainer>
   </Page>
 );
-
-type Props = {};
+type Props = { auth: Auth };
 
 type State = {
   event: CYFEvent,
@@ -45,7 +45,11 @@ class EventContainer extends Component<Props, State> {
         <Spinner name="circle" />
       </Page>
     ) : (
-      <EventPage {...this.state.event} />
+      <Page>
+        <InnerContainer>
+          <EventPage {...this.state.event} auth={this.props.auth} />
+        </InnerContainer>
+      </Page>
     );
   }
 }

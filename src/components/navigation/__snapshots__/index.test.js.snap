@@ -154,6 +154,13 @@ exports[`Navigation Component renders 1`] = `
           </strong>
         </NavItem>
       </LinkContainer>
+      <Component
+        auth={
+          Object {
+            "isAuthenticated": [MockFunction],
+          }
+        }
+      />
     </Nav>
   </NavbarCollapse>
 </Uncontrolled(Navbar)>
