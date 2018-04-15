@@ -84,6 +84,21 @@ export async function fetchEvent(
   return res;
 }
 
+export async function fetchUsers(
+  eventId: string,
+  fetchFn: AxiosPromise = axios,
+): Promise<CYFEvent> {
+  if (!process.env.REACT_APP_EVENTS_URL) {
+    throw new Error(
+      'Oi Please specify a valid environmental variable from EVENTS_URL',
+    );
+  }
+  const res = await fetchFn(
+    `${process.env.REACT_APP_EVENTS_URL}/${eventId}/users`,
+  );
+  return res;
+}
+
 export const sortEventsByDate = events => {
   const array = events.reduce((acc, event) => {
     const eventDate = event.date;

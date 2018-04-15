@@ -1,6 +1,6 @@
 import AWS from 'aws-sdk';
 
-AWS.config.update({ region: 'eu-west-1' });
+AWS.config.update({ region: 'eu-west-1', endpoint: 'http://localhost:8000' });
 
 /* eslint-disable import/prefer-default-export */
 export function call(action, params) {

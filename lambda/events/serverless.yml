@@ -17,6 +17,7 @@ provider:
   region: "${env:REGION}"
   environment:
     ENVIRONMENT: ${env:ENVIRONMENT}
+    AUTH0_ADMIN_CLIENT_SECRET: ${env:AUTH0_ADMIN_CLIENT_SECRET}
 
   iamRoleStatements:
     - Effect: Allow
@@ -107,5 +108,15 @@ functions:
        - http:
            path: events/{id}
            method: delete
+           cors: true
+           authorizer: aws_iam
+
+  event_users:
+    name: "${self:service}-update-${self:provider.stage}"
+    handler: functions/event_users.main
+    events:
+       - http:
+           path: events/{id}/users
+           method: get
            cors: true
            authorizer: aws_iam

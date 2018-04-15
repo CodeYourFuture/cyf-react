@@ -3,6 +3,9 @@
 BRANCH="$1"
 
 # Changes variables in code depending on environment.
+
+export AUTH0_ADMIN_CLIENT_SECRET=${AUTH0_ADMIN_CLIENT_SECRET}
+
 if [ $BRANCH == "production" ]; then
 	export ENVIRONMENT=production
 	cd lambda

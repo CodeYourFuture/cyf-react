@@ -10,13 +10,11 @@ const eventDescription = css({
 });
 
 export default ({ description }: { description: string }) => (
-  <p className={eventDescription}>
+  <div className={eventDescription}>
     {description &&
-      description.split('\n').map(text => (
-        <React.Fragment>
-          {text}
-          <br />
-        </React.Fragment>
-      ))}
-  </p>
+      description
+        .split('\n')
+        // eslint-disable-next-line react/no-array-index-key
+        .map((text, index) => <p key={text + index}>{text}</p>)}
+  </div>
 );

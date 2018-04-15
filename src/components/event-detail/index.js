@@ -1,14 +1,16 @@
+// @flow
 import React from 'react';
 import { css } from 'emotion';
 import moment from 'moment';
 import { Button } from 'react-bootstrap';
-import { addMentor } from '../../lib/events';
+import { addMentor, fetchUsers } from '../../lib/events';
 import type { CYFEvent } from '../../types';
 import type Auth from '../../lib/auth';
 import BackToEvent from './BackToEvent';
 import Description from './Description';
 import Location from './Location';
 import LoginButton from '../LoginButton';
+import Voluneers from './Volunteers';
 
 const desktopMq = `@media (min-width: 840px)`;
 
@@ -123,31 +125,42 @@ function renderAttending(auth: Auth, mentors: string[], attendClick: Function) {
 }
 
 type Props = CYFEvent & { auth: Auth };
+type State = { mentors: string[], users: Object[] };
 
-class EventDetail extends React.Component<Props, { mentors: string[] }> {
-  state = { mentors: this.props.mentors || [] };
+class EventDetail extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = { mentors: this.props.mentors || [], users: [] };
+    this.refreshUsers(props.eventId);
+  }
+
+  refreshUsers = (eventId: string) => {
+    fetchUsers(eventId).then(response => {
+      this.setState({ users: response.data.users });
+    });
+  };
 
   attendClick = () => {
     const { mentors = [], auth, eventId } = this.props;
     const newMentors = [...mentors, auth.getUserID()];
     this.setState({ mentors: newMentors });
-    addMentor(newMentors, eventId);
+    addMentor(newMentors, eventId).then(() => {
+      this.refreshUsers(eventId);
+    });
   };
 
   render() {
     const {
       date,
-      description,
       topic,
+      description,
       location,
       startTime,
       endTime,
       auth,
     } = this.props;
 
-    const { mentors } = this.state;
-    console.log(this.props);
-    console.log(description);
+    const { mentors, users } = this.state;
 
     return (
       <div className={container}>
@@ -161,6 +174,7 @@ class EventDetail extends React.Component<Props, { mentors: string[] }> {
         <Location location={location} />
         <section className={attendeeContainer}>
           <h5>Volunteers: {(mentors || []).length}</h5>
+          <Voluneers users={users} />
           {renderAttending(auth, mentors, this.attendClick)}
         </section>
         <hr className={divider} />

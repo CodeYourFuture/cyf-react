@@ -33,6 +33,9 @@ exports[`Event Component renders 1`] = `
           Volunteers: 
           0
         </h5>
+        <div
+          className="css-65nsn9"
+        />
         <button
           className="css-1b7napj btn btn-default"
           disabled={false}
@@ -45,7 +48,7 @@ exports[`Event Component renders 1`] = `
       <hr
         className="css-1d8iqsy"
       />
-      <p
+      <div
         className="css-ofsyx7"
       />
       <div>
