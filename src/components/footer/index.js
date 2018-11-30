@@ -75,8 +75,16 @@ const Footer = () => (
                 rel="noopener noreferrer"
               >
                 1174929
-              </Link>.
+              </Link>. |{' '}
+              <Link
+                to="/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Privacy Policy
+              </Link>
             </OurVendorContainer>
+
             <SocialContainer>
               <Link
                 to="https://www.facebook.com/codeyourfuture.io"

@@ -15,6 +15,7 @@ import {
   Partners,
   Students,
   Volunteers,
+  Privacy,
   Conference,
   SouthAfrica,
   Colombia,
@@ -44,6 +45,7 @@ const Routes = () => (
       <Route exact path="/south-africa" component={SouthAfrica} />
       <Route exact path="/colombia" component={Colombia} />
       <Route exact path="/event/create" component={CreateEvent} />
+      <Route exact path="/privacy-policy" component={Privacy} />
       <Route
         exact
         path="/events/:event_id"

@@ -10,6 +10,7 @@ import MeetTheTeam from './team';
 import Donate from './donate';
 import Students from './students';
 import Volunteers from './volunteers';
+import Privacy from './privacy-policy';
 import Conference from './cyf_confrence';
 import SouthAfrica from './south-africa';
 import Colombia from './colombia';
@@ -27,6 +28,7 @@ export {
   About,
   MeetTheTeam,
   Donate,
+  Privacy,
   Conference,
   SouthAfrica,
   Colombia,
