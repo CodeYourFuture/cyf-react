@@ -34,8 +34,8 @@ const WhatWeTeach = () => (
           </div>
           <h4>HTML &amp; CSS</h4>
           <p>
-            Fundamentals of design. Design static web pages using best front-end
-            practices.
+            Fundamentals of web pages. Structure and style static web pages
+            using best front-end practices.
           </p>
         </div>
         <div className="col-sm-5ths">
@@ -43,23 +43,24 @@ const WhatWeTeach = () => (
             <img src={codeIcon} alt="Code" />
           </div>
           <h4>JavaScript</h4>
-          <p>
-            Use powerful modern scripting language to build web applications.
-          </p>
+          <p>A powerful modern scripting language to build web applications.</p>
         </div>
         <div className="col-sm-5ths">
           <div className="md-icon">
             <img src={nodeJsIcon} alt="NodeJS" />
           </div>
           <h4>Node.js</h4>
-          <p>Web application development powered by modern and fast Node.js</p>
+          <p>
+            Web application back-end development powered by modern and fast
+            Node.js.
+          </p>
         </div>
         <div className="col-sm-5ths">
           <div className="md-icon">
             <img src={reactIcon} alt="React" />
           </div>
           <h4>React</h4>
-          <p>A Javascript library for building user interfaces</p>
+          <p>A Javascript library for building user interfaces.</p>
         </div>
       </div>
     </div>
