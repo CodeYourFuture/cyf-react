@@ -153,9 +153,20 @@ const ColombiaText = styled(({ className }) => (
       className="text-left"
       title="¿Quienes somos?"
       items={[
-        'Somos una organización non-profit empezada en Inglaterra',
-        'Ayudamos a personas a aprender desarrollo de software que mejorara sus vidas.',
-        'Nos enfocamos en personas que por su propia cuenta no tienen la posibilidad de acceder a una carrera universitaria',
+        {
+          text: 'Somos una organización non-profit empezada en Inglaterra',
+          key: 'colombia-infobox-1',
+        },
+        {
+          text:
+            'Ayudamos a personas a aprender desarrollo de software que mejorara sus vidas.',
+          key: 'colombia-infobox-2',
+        },
+        {
+          text:
+            'Nos enfocamos en personas que por su propia cuenta no tienen la posibilidad de acceder a una carrera universitaria',
+          key: 'colombia-infobox-3',
+        },
       ]}
     />
 
@@ -165,33 +176,48 @@ const ColombiaText = styled(({ className }) => (
       className="text-left"
       title="Lenguajes de programación que se ensañarán"
       items={[
-        <LearnItem>
-          <LearnText>JavaScript (React.js)</LearnText>
-          <LearnLogos>
-            <StyledImg src={jsLogo} alt="javascript-logo" />
-            <StyledImg src={reactLogo} alt="react-logo" />
-          </LearnLogos>
-        </LearnItem>,
-        <LearnItem>
-          <LearnText>HTML</LearnText>
-          <LearnLogos>
-            <StyledImg src={htmlLogo} alt="html-logo" />
-          </LearnLogos>
-        </LearnItem>,
-        <LearnItem>
-          <LearnText>CSS</LearnText>
-          <LearnLogos>
-            <StyledImg src={cssLogo} alt="css-logo" />
-          </LearnLogos>
-        </LearnItem>,
+        {
+          text: () => (
+            <LearnItem>
+              <LearnText>JavaScript (React.js)</LearnText>
+              <LearnLogos>
+                <StyledImg src={jsLogo} alt="javascript-logo" />
+                <StyledImg src={reactLogo} alt="react-logo" />
+              </LearnLogos>
+            </LearnItem>
+          ),
+          key: 'colombia-infobox-4',
+        },
+        {
+          text: () => (
+            <LearnItem>
+              <LearnText>HTML</LearnText>
+              <LearnLogos>
+                <StyledImg src={htmlLogo} alt="html-logo" />
+              </LearnLogos>
+            </LearnItem>
+          ),
+          key: 'colombia-infobox-5',
+        },
+        {
+          text: () => (
+            <LearnItem>
+              <LearnText>CSS</LearnText>
+              <LearnLogos>
+                <StyledImg src={cssLogo} alt="css-logo" />
+              </LearnLogos>
+            </LearnItem>
+          ),
+          key: 'colombia-infobox-6',
+        },
       ]}
     />
 
     <InfoBox
       className="text-left"
       title="Preguntas frecuentes"
-      items={listFaq.map(({ key, question, answer }, i) => (
-        <FAQ key={key} question={question} answer={answer} key={i} />
+      items={listFaq.map(({ key, question, answer }) => (
+        <FAQ key={key} question={question} answer={answer} />
       ))}
     />
 
@@ -199,7 +225,11 @@ const ColombiaText = styled(({ className }) => (
       className="text-left"
       title="Tutores"
       items={[
-        'Los tutores son personas profesionales en esta área desarrolladores de software que tienen años trabajando en empresas de este medio y que aportan su tiempo y conocimiento para esta buena causa.',
+        {
+          text:
+            'Los tutores son personas profesionales en esta área desarrolladores de software que tienen años trabajando en empresas de este medio y que aportan su tiempo y conocimiento para esta buena causa.',
+          key: 'colombia-infobox-7',
+        },
       ]}
     />
 
@@ -207,7 +237,11 @@ const ColombiaText = styled(({ className }) => (
       className="text-left"
       title="Voluntarios"
       items={[
-        'Tenemos voluntarios de todas partes de Colombia y el mundo que conocen el proyecto y saben que vale la pena apostar para contribuir un poco de lo que ellos han recibido, estos son algunos de ellos.',
+        {
+          text:
+            'Tenemos voluntarios de todas partes de Colombia y el mundo que conocen el proyecto y saben que vale la pena apostar para contribuir un poco de lo que ellos han recibido, estos son algunos de ellos.',
+          key: 'colombia-infobox-8',
+        },
       ]}
     />
 
@@ -215,11 +249,26 @@ const ColombiaText = styled(({ className }) => (
       className="text-left"
       title="Patrocinadores"
       items={[
-        'Yuxy global',
-        'Endava',
-        'Biblioteca pública de San Javier',
-        'Banco de Alimentos',
-        'EPM',
+        {
+          text: 'Yuxy global',
+          key: 'colombia-infobox-9',
+        },
+        {
+          text: 'Endava',
+          key: 'colombia-infobox-10',
+        },
+        {
+          text: 'Biblioteca pública de San Javier',
+          key: 'colombia-infobox-11',
+        },
+        {
+          text: 'Banco de Alimentos',
+          key: 'colombia-infobox-12',
+        },
+        {
+          text: 'EPM',
+          key: 'colombia-infobox-13',
+        },
       ]}
     />
   </div>
