@@ -34,9 +34,7 @@ const StyledUl = styled('ul')`
 const InfoBox = styled(({ className, title, items }) => (
   <div className={className}>
     <h3>{title}</h3>
-    <StyledUl>
-      {items.map((item, i) => <li key={`info-item-${i}`}>{item}</li>)}
-    </StyledUl>
+    <StyledUl>{items.map(item => <li key={item.key}>{item}</li>)}</StyledUl>
   </div>
 ))`
   :not(:last-child) {
@@ -58,21 +56,25 @@ const FAQ = ({ question, answer }) => (
 
 const listFaq = [
   {
+    key: 'colombia-question-1',
     question: '¿ Realizar el curso tiene algun costo?',
     answer:
       'NO, solo requieren que realices los pasos para postularte y esperar el proceso de selección',
   },
   {
+    key: 'colombia-question-2',
     question: '¿Debo saber sobre programación de software para aplicar?',
     answer:
       'NO, los aplicantes hacen un proceso de 5 pasos y con estos pasos adquirirán conocimientos básicos con los que tendrán idea de que se trata el curso y que van a aprender.',
   },
   {
+    key: 'colombia-question-3',
     question: '¿Soy menor de edad puedo aplicar?',
     answer:
       'NO, nos enfocamos en edades de 18 en adelante sin embargo existen fundaciones como coderise que trabajan con chicos de 12 a 18 años',
   },
   {
+    key: 'colombia-question-4',
     question: '¿Que incluye la beca?',
     answer: (
       <ul>
@@ -91,6 +93,7 @@ const listFaq = [
     ),
   },
   {
+    key: 'colombia-question-5',
     question: '¿ la fundación entregará un certificado por este curso?',
     answer:
       'La fundación entregará una certificación por asistir al curso es decir certificado de participación.',
