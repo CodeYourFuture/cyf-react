@@ -190,8 +190,8 @@ const ColombiaText = styled(({ className }) => (
     <InfoBox
       className="text-left"
       title="Preguntas frecuentes"
-      items={listFaq.map(({ question, answer }, i) => (
-        <FAQ question={question} answer={answer} key={i} />
+      items={listFaq.map(({ key, question, answer }, i) => (
+        <FAQ key={key} question={question} answer={answer} key={i} />
       ))}
     />
 
