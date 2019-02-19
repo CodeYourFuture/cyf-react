@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
 import TopSection from '../../components/top-section';
@@ -53,6 +54,11 @@ const FAQ = ({ question, answer }) => (
     <div> {answer} </div>
   </div>
 );
+
+FAQ.propTypes = {
+  question: PropTypes.string.isRequired,
+  answer: PropTypes.string.isRequired,
+};
 
 const listFaq = [
   {
