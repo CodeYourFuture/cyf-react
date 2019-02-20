@@ -10208,3 +10208,24 @@ footer .vendor-license a {
     height: 38em;
     display: inline-block; }
   }
+
+/***** Bootstrap columns of equal 5ths *****/
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-xs-5ths {
+  width: 20%;
+  float: left;
+}
+@media all and (min-width: 768px), all and (min-width: 992px), all and (min-width: 1200px) {
+  .col-sm-5ths {
+    width: 20%;
+    float: left;
+  }
+}
