@@ -34,7 +34,7 @@ const WhatWeTeach = () => (
           </div>
           <h4>HTML &amp; CSS</h4>
           <p>
-            Fundamentals of web pages. Structure and style static web pages
+            Fundamentals of the web. Structure and style static web pages
             using best front-end practices.
           </p>
         </div>

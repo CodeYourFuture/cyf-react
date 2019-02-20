@@ -60,7 +60,7 @@ exports[`WhatWeTeach renders the component 1`] = `
           HTML & CSS
         </h4>
         <p>
-          Fundamentals of design. Design static web pages using best front-end practices.
+          Fundamentals of the web. Structure and style static web pages using best front-end practices.
         </p>
       </div>
       <div
@@ -78,7 +78,7 @@ exports[`WhatWeTeach renders the component 1`] = `
           JavaScript
         </h4>
         <p>
-          Use powerful modern scripting language to build web applications.
+          A powerful modern scripting language to build web applications.
         </p>
       </div>
       <div
@@ -96,7 +96,7 @@ exports[`WhatWeTeach renders the component 1`] = `
           Node.js
         </h4>
         <p>
-          Web application development powered by modern and fast Node.js
+          Web application back-end development powered by modern and fast Node.js.
         </p>
       </div>
       <div
@@ -114,7 +114,7 @@ exports[`WhatWeTeach renders the component 1`] = `
           React
         </h4>
         <p>
-          A Javascript library for building user interfaces
+          A Javascript library for building user interfaces.
         </p>
       </div>
     </div>
