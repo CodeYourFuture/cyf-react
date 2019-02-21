@@ -34,7 +34,7 @@ const StyledUl = styled('ul')`
 const InfoBox = styled(({ className, title, items }) => (
   <div className={className}>
     <h3>{title}</h3>
-    <StyledUl>{items.map(item => <li key={item.key}>{item}</li>)}</StyledUl>
+    <StyledUl>{items}</StyledUl>
   </div>
 ))`
   :not(:last-child) {
@@ -46,12 +46,12 @@ const InfoBox = styled(({ className, title, items }) => (
 `;
 
 const FAQ = ({ question, answer }: Object) => (
-  <div>
+  <li>
     <div>
       <b>{question} </b>
     </div>
     <div> {answer} </div>
-  </div>
+  </li>
 );
 
 const listFaq = [
@@ -161,7 +161,7 @@ const ColombiaText = styled(({ className }) => (
             'Nos enfocamos en personas que por su propia cuenta no tienen la posibilidad de acceder a una carrera universitaria',
           key: 'colombia-infobox-3',
         },
-      ]}
+      ].map(({ key, text }) => <li key={key}>{text}</li>)}
     />
 
     <BottomMarginImg src={photo} alt="code-your-future-colombia" />
@@ -171,7 +171,7 @@ const ColombiaText = styled(({ className }) => (
       title="Lenguajes de programación que se ensañarán"
       items={[
         {
-          text: () => (
+          text: (
             <LearnItem>
               <LearnText>JavaScript (React.js)</LearnText>
               <LearnLogos>
@@ -183,7 +183,7 @@ const ColombiaText = styled(({ className }) => (
           key: 'colombia-infobox-4',
         },
         {
-          text: () => (
+          text: (
             <LearnItem>
               <LearnText>HTML</LearnText>
               <LearnLogos>
@@ -194,7 +194,7 @@ const ColombiaText = styled(({ className }) => (
           key: 'colombia-infobox-5',
         },
         {
-          text: () => (
+          text: (
             <LearnItem>
               <LearnText>CSS</LearnText>
               <LearnLogos>
@@ -204,7 +204,7 @@ const ColombiaText = styled(({ className }) => (
           ),
           key: 'colombia-infobox-6',
         },
-      ]}
+      ].map(({ key, text }) => <li key={key}>{text}</li>)}
     />
 
     <InfoBox
@@ -224,7 +224,7 @@ const ColombiaText = styled(({ className }) => (
             'Los tutores son personas profesionales en esta área desarrolladores de software que tienen años trabajando en empresas de este medio y que aportan su tiempo y conocimiento para esta buena causa.',
           key: 'colombia-infobox-7',
         },
-      ]}
+      ].map(({ key, text }) => <li key={key}>{text}</li>)}
     />
 
     <InfoBox
@@ -236,7 +236,7 @@ const ColombiaText = styled(({ className }) => (
             'Tenemos voluntarios de todas partes de Colombia y el mundo que conocen el proyecto y saben que vale la pena apostar para contribuir un poco de lo que ellos han recibido, estos son algunos de ellos.',
           key: 'colombia-infobox-8',
         },
-      ]}
+      ].map(({ key, text }) => <li key={key}>{text}</li>)}
     />
 
     <InfoBox
@@ -263,7 +263,7 @@ const ColombiaText = styled(({ className }) => (
           text: 'EPM',
           key: 'colombia-infobox-13',
         },
-      ]}
+      ].map(({ key, text }) => <li key={key}>{text}</li>)}
     />
   </div>
 ))`
