@@ -40,7 +40,7 @@ exports[`Footer Component renders correctly 1`] = `
               rel="noopener noreferrer"
               replace={false}
               target="_blank"
-              to="http://apps.charitycommission.gov.uk/Showcharity/RegisterOfCharities/CharityFramework.aspx?RegisteredCharityNumber=1174929&SubsidiaryNumber=0"
+              to="http://beta.charitycommission.gov.uk/charity-details/?regid=1174929&subid=0"
             >
               1174929
             </Link>

@@ -70,7 +70,7 @@ const Footer = () => (
               </strong>
               &nbsp;|&nbsp; Registered charity number&nbsp;
               <Link
-                to="http://apps.charitycommission.gov.uk/Showcharity/RegisterOfCharities/CharityFramework.aspx?RegisteredCharityNumber=1174929&SubsidiaryNumber=0"
+                to="http://beta.charitycommission.gov.uk/charity-details/?regid=1174929&subid=0"
                 target="_blank"
                 rel="noopener noreferrer"
               >
