@@ -4,9 +4,15 @@ import { shallow } from 'enzyme';
 import CYFLink from './';
 
 describe('CYFLink Component', () => {
-  it('renders correctly', () => {
+  it('renders internal links correctly', () => {
     expect(
       shallow(<CYFLink path="/apply/mentor" title="Become a Mentor" />),
+    ).toMatchSnapshot();
+  });
+
+  it('renders external links correctly', () => {
+    expect(
+      shallow(<CYFLink path="https://codeyourfuture.io" title="Homepage" />),
     ).toMatchSnapshot();
   });
 });

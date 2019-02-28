@@ -9,14 +9,25 @@ type Props = {
 
 const CYFLink = ({ path, title }: Props) => (
   <div className="section-bottom-link">
-    <Link
-      className="big-link-3 btn"
-      to={path}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {title}
-    </Link>
+    {path.indexOf('http') === 0 ? (
+      <a
+        className="big-link-3 btn"
+        href={path}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {title}
+      </a>
+    ) : (
+      <Link
+        className="big-link-3 btn"
+        to={path}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {title}
+      </Link>
+    )}
   </div>
 );
 
