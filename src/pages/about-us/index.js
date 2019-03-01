@@ -18,8 +18,9 @@ const AboutText = (
     <p>
       In 2016 we launched the first cohort of our 6-month web development
       programme, coached by a group of professional developers. Today we are
-      running the fifth class in London and also new classes in Glasgow and
-      Manchester. This is <strong>just the beginning</strong>. With your help we
+      running the fifth class in London, the third class in Glasgow and the
+      second class in Manchester. We also have new classes setting up in Rome
+      and Bogotá. This is <strong>just the beginning</strong>. With your help we
       will be expanding to other regions and cities.
     </p>
     <p>
