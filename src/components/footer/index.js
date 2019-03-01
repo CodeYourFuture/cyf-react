@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'react-emotion';
 import fblogo from '../../assets/images/logos/fb_logo.svg';
 import twitterlogo from '../../assets/images/logos/twitter-silhouette.svg';
@@ -60,43 +59,53 @@ const Footer = () => (
             <OurVendorContainer className="our-vendor">
               &copy; All rights reserved&nbsp;|&nbsp;Photos by &copy;&nbsp;
               <strong>
-                <Link
-                  to="http://www.alicerowsome.com/"
+                <a
+                  href="http://www.alicerowsome.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Alice Rowsome
-                </Link>
+                </a>
               </strong>
               &nbsp;|&nbsp; Registered charity number&nbsp;
-              <Link
-                to="http://apps.charitycommission.gov.uk/Showcharity/RegisterOfCharities/CharityFramework.aspx?RegisteredCharityNumber=1174929&SubsidiaryNumber=0"
+              <a
+                href="http://beta.charitycommission.gov.uk/charity-details/?regid=1174929&subid=0"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 1174929
-              </Link>
+              </a>
               .
             </OurVendorContainer>
             <SocialContainer>
-              <Link
-                to="https://www.facebook.com/codeyourfuture.io"
+              <a
+                href="https://www.facebook.com/codeyourfuture.io"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <img src={fblogo} style={logoStyle} alt="facebook" />
-              </Link>
-              <Link to="https://twitter.com/CodeYourFuture_" target="_blank">
-                <img src={twitterlogo} style={logoStyle} alt="twitter" />
-              </Link>
-              <Link
-                to="https://www.linkedin.com/company/codeyourfuture"
+              </a>
+              <a
+                href="https://twitter.com/CodeYourFuture_"
                 target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={twitterlogo} style={logoStyle} alt="twitter" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/codeyourfuture"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <img src={linkedinlogo} style={logoStyle} alt="linkedin" />
-              </Link>
-              <Link to="mailto:contact@codeyourfuture.io" target="_blank">
+              </a>
+              <a
+                href="mailto:contact@codeyourfuture.io"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src={emaillogo} style={logoStyle} alt="email" />
-              </Link>
+              </a>
             </SocialContainer>
           </ContentContainer>
         </FooterContainer>

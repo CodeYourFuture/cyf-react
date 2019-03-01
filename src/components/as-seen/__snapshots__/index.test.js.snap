@@ -28,13 +28,13 @@ exports[`AsSeen renders 1`] = `
       alt="Wired"
       key="wired.svg"
       src="wired.svg"
-      url="http://www.wired.co.uk/article/codeyourfuture-refugee-coding-school"
+      url="https://www.wired.co.uk/article/codeyourfuture-refugee-coding-school"
     />
     <Outlet
       alt="UNHCR"
       key="unhcr.png"
       src="unhcr.png"
-      url="http://www.unhcr.org/news/stories/2017/1/586e420c7/volunteers-train-refugees-to-crack-into-london-tech-industry.html"
+      url="https://www.unhcr.org/news/stories/2017/1/586e420c7/volunteers-train-refugees-to-crack-into-london-tech-industry.html"
     />
     <Outlet
       alt="Refugees Deeply"

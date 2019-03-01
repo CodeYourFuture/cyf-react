@@ -5,13 +5,13 @@ import bbc from '../../assets/images/logos/bbc.svg';
 
 const mediaOutlets = [
   {
-    url: 'http://www.wired.co.uk/article/codeyourfuture-refugee-coding-school',
+    url: 'https://www.wired.co.uk/article/codeyourfuture-refugee-coding-school',
     src: wired,
     alt: 'Wired',
   },
   {
     url:
-      'http://www.unhcr.org/news/stories/2017/1/586e420c7/volunteers-train-refugees-to-crack-into-london-tech-industry.html',
+      'https://www.unhcr.org/news/stories/2017/1/586e420c7/volunteers-train-refugees-to-crack-into-london-tech-industry.html',
     src: unhcr,
     alt: 'UNHCR',
   },

@@ -26,31 +26,29 @@ exports[`Footer Component renders correctly 1`] = `
           >
             © All rights reserved | Photos by © 
             <strong>
-              <Link
+              <a
+                href="http://www.alicerowsome.com/"
                 rel="noopener noreferrer"
-                replace={false}
                 target="_blank"
-                to="http://www.alicerowsome.com/"
               >
                 Alice Rowsome
-              </Link>
+              </a>
             </strong>
              |  Registered charity number 
-            <Link
+            <a
+              href="http://beta.charitycommission.gov.uk/charity-details/?regid=1174929&subid=0"
               rel="noopener noreferrer"
-              replace={false}
               target="_blank"
-              to="http://apps.charitycommission.gov.uk/Showcharity/RegisterOfCharities/CharityFramework.aspx?RegisteredCharityNumber=1174929&SubsidiaryNumber=0"
             >
               1174929
-            </Link>
+            </a>
             .
           </Styled(div)>
           <Styled(div)>
-            <Link
-              replace={false}
+            <a
+              href="https://www.facebook.com/codeyourfuture.io"
+              rel="noopener noreferrer"
               target="_blank"
-              to="https://www.facebook.com/codeyourfuture.io"
             >
               <img
                 alt="facebook"
@@ -62,11 +60,11 @@ exports[`Footer Component renders correctly 1`] = `
                   }
                 }
               />
-            </Link>
-            <Link
-              replace={false}
+            </a>
+            <a
+              href="https://twitter.com/CodeYourFuture_"
+              rel="noopener noreferrer"
               target="_blank"
-              to="https://twitter.com/CodeYourFuture_"
             >
               <img
                 alt="twitter"
@@ -78,11 +76,11 @@ exports[`Footer Component renders correctly 1`] = `
                   }
                 }
               />
-            </Link>
-            <Link
-              replace={false}
+            </a>
+            <a
+              href="https://www.linkedin.com/company/codeyourfuture"
+              rel="noopener noreferrer"
               target="_blank"
-              to="https://www.linkedin.com/company/codeyourfuture"
             >
               <img
                 alt="linkedin"
@@ -94,11 +92,11 @@ exports[`Footer Component renders correctly 1`] = `
                   }
                 }
               />
-            </Link>
-            <Link
-              replace={false}
+            </a>
+            <a
+              href="mailto:contact@codeyourfuture.io"
+              rel="noopener noreferrer"
               target="_blank"
-              to="mailto:contact@codeyourfuture.io"
             >
               <img
                 alt="email"
@@ -110,7 +108,7 @@ exports[`Footer Component renders correctly 1`] = `
                   }
                 }
               />
-            </Link>
+            </a>
           </Styled(div)>
         </Styled(div)>
       </Styled(div)>
