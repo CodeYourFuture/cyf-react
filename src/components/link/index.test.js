@@ -6,7 +6,7 @@ import CYFLink from './';
 describe('CYFLink Component', () => {
   it('renders internal links correctly', () => {
     expect(
-      shallow(<CYFLink path="/apply/mentor" title="Become a Mentor" />),
+      shallow(<CYFLink path="/apply" title="Become a Mentor" />),
     ).toMatchSnapshot();
   });
 

@@ -18,13 +18,13 @@ const Volunteers = () => (
       <SectionBody>
         <p>{Content.Volunteers.Body.One}</p>
         <p>{Content.Volunteers.Body.Two}</p>
-        <p>{Content.Volunteers.Body.Three}</p>
+        <ul>
+          <li>{Content.Volunteers.Body.Three}</li>
+          <li>{Content.Volunteers.Body.Four}</li>
+          <li>{Content.Volunteers.Body.Five}</li>
+        </ul>
       </SectionBody>
-      <CYFLink path="/apply/mentor" title="Become a Mentor" />
-      <SectionBody>
-        <p>{Content.Volunteers.Body.Four}</p>
-      </SectionBody>
-      <CYFLink path="/apply/volunteer" title="Become a Volunteer" />
+      <CYFLink path="/apply" title="Become a Volunteer" />
     </InnerContainer>
     <div>
       <img src={mentors} alt="code-your-future-mentors" />

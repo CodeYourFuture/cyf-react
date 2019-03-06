@@ -3,13 +3,15 @@
     "Heading": "Join Us",
     "Body": {
       "One":
-        "Welcome to a community where your knowledge and experience will help to transform the lives of disadvantaged and underprivileged individuals, refugees and asylum seekers.",
+        "Welcome to a community where your knowledge and expertise will help to transform the lives of disadvantaged and underprivileged individuals, refugees and asylum seekers.",
       "Two":
-        "We are looking for experienced web developers (HTML/CSS, JavaScript, Node, Angular, React, Database) to participate in our classes.",
+        "A young nonprofit is a lot like a start-up: growing quickly and always looking for versatile people to join. Our volunteers are driven and often wear many hats. Join us in one of 5 CYF cities world wide or set up a new CYF chapter to support your local communities. We are looking for:",
       "Three":
-        "We are also looking for technology managers and entrepreneurs to give workshops on modern software practices and methodologies.",
+        "Experienced web developers (HTML/CSS, JavaScript, Node, React, Databases) to help teach our classes.",
       "Four":
-        "Or you can become a volunteer and help us support the expansion of the organisation. No matter where you are in the UK, with your help we’ll create a local program to serve local refugee communities."
+        "Professionals from the tech industry to join our mentorship programme and give one of our students guidance and support.",
+      "Five":
+        "Non-technical volunteers from virtually any background to help us run and grow our organisation."
     }
   }
 }
