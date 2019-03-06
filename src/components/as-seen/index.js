@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import mediaOutlets from '../../content/media-outlets';
 
 type Props = {
@@ -9,11 +8,11 @@ type Props = {
 };
 const Outlet = ({ url, src, alt }: Props) => (
   <div className="col-sm-3">
-    <Link to={url} target="_blank" rel="noopener noreferrer">
+    <a href={url} target="_blank" rel="noopener noreferrer">
       <div className="icon--large">
         <img src={src} alt={alt} />
       </div>
-    </Link>
+    </a>
   </div>
 );
 
