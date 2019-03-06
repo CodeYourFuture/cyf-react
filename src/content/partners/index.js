@@ -8,6 +8,8 @@ import skyscannerLogo from '../../assets/images/logos/skyscanner.svg';
 import coop from '../../assets/images/logos/coop.png';
 import airtame from '../../assets/images/logos/airtame.png';
 import honeycomb from '../../assets/images/logos/honeycombworks.png';
+import lventure from '../../assets/images/logos/logoenlabs2.png';
+import enlabs from '../../assets/images/logos/Enlabslogo2.png';
 
 const partners = {
   general: [
@@ -60,6 +62,23 @@ const partners = {
       name: 'Co-op',
       url: 'http://www.coop.co.uk',
       logo: coop,
+      featured: false,
+    },
+  ],
+
+  rome: [
+    {
+      id: 'luissenlabs',
+      name: 'Luiss EnLabs',
+      url: 'https://luissenlabs.com/',
+      logo: enlabs,
+      featured: true,
+    },
+    {
+      id: 'lventure',
+      name: 'LVenture Group',
+      url: 'https://lventuregroup.com/?lang=en',
+      logo: lventure,
       featured: false,
     },
   ],
