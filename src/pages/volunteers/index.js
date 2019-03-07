@@ -19,9 +19,19 @@ const Volunteers = () => (
         <p>{Content.Volunteers.Body.One}</p>
         <p>{Content.Volunteers.Body.Two}</p>
         <ul>
-          <li>{Content.Volunteers.Body.Three}</li>
-          <li>{Content.Volunteers.Body.Four}</li>
-          <li>{Content.Volunteers.Body.Five}</li>
+          <li>
+            <strong>Non-technical volunteers</strong> from virtually any
+            background to help us run and grow our organisation.
+          </li>
+          <li>
+            Professionals from the tech industry to join our{' '}
+            <strong>mentorship programme</strong> and give a student guidance
+            and support.
+          </li>
+          <li>
+            <strong>Experienced web developers</strong> (HTML/CSS, JavaScript,
+            Node, React, Databases) to help teach our classes.
+          </li>
         </ul>
       </SectionBody>
       <CYFLink path="/apply" title="Become a Volunteer" />

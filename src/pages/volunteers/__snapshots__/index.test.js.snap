@@ -18,13 +18,24 @@ exports[`Volunteers Page renders correctly 1`] = `
       </p>
       <ul>
         <li>
-          Non-technical volunteers from virtually any background to help us run and grow our organisation.
+          <strong>
+            Non-technical volunteers
+          </strong>
+           from virtually any background to help us run and grow our organisation.
         </li>
         <li>
-          Professionals from the tech industry to join our mentorship programme and give a student guidance and support.
+          Professionals from the tech industry to join our
+           
+          <strong>
+            mentorship programme
+          </strong>
+           and give a student guidance and support.
         </li>
         <li>
-          Experienced web developers (HTML/CSS, JavaScript, Node, React, Databases) to help teach our classes.
+          <strong>
+            Experienced web developers
+          </strong>
+           (HTML/CSS, JavaScript, Node, React, Databases) to help teach our classes.
         </li>
       </ul>
     </SectionBody>
