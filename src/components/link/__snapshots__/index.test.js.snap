@@ -1,6 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CYFLink Component renders correctly 1`] = `
+exports[`CYFLink Component renders external links correctly 1`] = `
+<div
+  className="section-bottom-link"
+>
+  <a
+    className="big-link-3 btn"
+    href="https://codeyourfuture.io"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Homepage
+  </a>
+</div>
+`;
+
+exports[`CYFLink Component renders internal links correctly 1`] = `
 <div
   className="section-bottom-link"
 >
