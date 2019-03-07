@@ -14,17 +14,17 @@ exports[`Volunteers Page renders correctly 1`] = `
         Welcome to a community where your knowledge and expertise will help to transform the lives of disadvantaged and underprivileged individuals, refugees and asylum seekers.
       </p>
       <p>
-        A young nonprofit is a lot like a start-up: growing quickly and always looking for versatile people to join. Our volunteers are driven and often wear many hats. Join us in one of 5 CYF cities world wide or set up a new CYF chapter to support your local communities. We are looking for:
+        A young nonprofit is a lot like a start-up: growing quickly and always looking for versatile people to join. Join us in one of 5 CYF cities worldwide or set up a new CYF chapter to support your local communities. We are looking for:
       </p>
       <ul>
         <li>
-          Experienced web developers (HTML/CSS, JavaScript, Node, React, Databases) to help teach our classes.
-        </li>
-        <li>
-          Professionals from the tech industry to join our mentorship programme and give one of our students guidance and support.
-        </li>
-        <li>
           Non-technical volunteers from virtually any background to help us run and grow our organisation.
+        </li>
+        <li>
+          Professionals from the tech industry to join our mentorship programme and give a student guidance and support.
+        </li>
+        <li>
+          Experienced web developers (HTML/CSS, JavaScript, Node, React, Databases) to help teach our classes.
         </li>
       </ul>
     </SectionBody>
