@@ -68,18 +68,18 @@ const partners = {
 
   rome: [
     {
-      id: 'luissenlabs',
-      name: 'Luiss EnLabs',
-      url: 'https://luissenlabs.com/',
-      logo: enlabs,
-      featured: true,
-    },
-    {
       id: 'lventure',
       name: 'LVenture Group',
       url: 'https://lventuregroup.com/?lang=en',
       logo: lventure,
       featured: false,
+    },
+    {
+      id: 'luissenlabs',
+      name: 'Luiss EnLabs',
+      url: 'https://luissenlabs.com/',
+      logo: enlabs,
+      featured: true,
     },
   ],
 
