@@ -21,10 +21,8 @@ exports[`CYFLink Component renders internal links correctly 1`] = `
 >
   <Link
     className="big-link-3 btn"
-    rel="noopener noreferrer"
     replace={false}
-    target="_blank"
-    to="/apply/mentor"
+    to="/apply"
   >
     Become a Mentor
   </Link>
