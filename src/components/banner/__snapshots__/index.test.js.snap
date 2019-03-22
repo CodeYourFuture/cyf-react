@@ -25,9 +25,7 @@ exports[`Banner Component renders 1`] = `
       </Link>
       <Link
         className="big-link-2 btn"
-        rel="noopener noreferrer"
         replace={false}
-        target="_blank"
         to="volunteers"
       >
         Become a volunteer

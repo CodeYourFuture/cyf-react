@@ -19,9 +19,9 @@ exports[`Volunteers Page renders correctly 1`] = `
       <ul>
         <li>
           <strong>
-            Non-technical volunteers
+            Volunteers from virtually any background
           </strong>
-           from virtually any background to help us run and grow our organisation.
+          to help us run and grow our organisation.
         </li>
         <li>
           Professionals from the tech industry to join our
