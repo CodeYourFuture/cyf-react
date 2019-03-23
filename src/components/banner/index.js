@@ -40,12 +40,7 @@ const Banner = () => (
         <Link to="students" className="big-link-2 btn">
           Apply Now
         </Link>
-        <Link
-          className="big-link-2 btn"
-          to="volunteers"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link to="volunteers" className="big-link-2 btn">
           Become a volunteer
         </Link>
       </div>

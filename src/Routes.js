@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Router } from 'react-router-dom';
+import { Route, Router, Switch, Redirect } from 'react-router-dom';
 import history from './lib/history';
 
 import {
@@ -63,7 +63,11 @@ const Routes = () => (
           return null;
         }}
       />
-      <Route exact path="/apply/:formType" component={Apply} />
+      <Switch>
+        <Redirect from="/apply/volunteer" to="/apply" />
+        <Redirect from="/apply/mentor" to="/apply" />
+        <Route exact path="/apply" component={Apply} />
+      </Switch>
       <Route exact path="/apply/success/:formType" component={ApplySuccess} />
       <Route exact path="/partners" component={Partners} />
       <Route exact path="/partners.html" component={Partners} />

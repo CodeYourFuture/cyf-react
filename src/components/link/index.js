@@ -19,12 +19,7 @@ const CYFLink = ({ path, title }: Props) => (
         {title}
       </a>
     ) : (
-      <Link
-        className="big-link-3 btn"
-        to={path}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <Link className="big-link-3 btn" to={path}>
         {title}
       </Link>
     )}

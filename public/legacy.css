@@ -9497,7 +9497,8 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
   color: #555;
-  text-align: center; }
+  text-align: center;
+  font-size: 15px; }
 
 strong {
   font-weight: 700; }
@@ -9531,9 +9532,6 @@ h3 {
   line-height: 30px;
   text-transform: uppercase;
 }
-
-p {
-  font-size: 15px; }
 
 img {
   max-width: 100%; }
@@ -10162,7 +10160,7 @@ footer .credits a {
   color: #999; }
 
 footer .our-vendor {
-  font-size: 1.2em; }
+  font-size: 16px; }
 
 footer img {
   height: 15px;
