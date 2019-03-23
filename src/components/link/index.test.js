@@ -15,4 +15,10 @@ describe('CYFLink Component', () => {
       shallow(<CYFLink path="https://codeyourfuture.io" title="Homepage" />),
     ).toMatchSnapshot();
   });
+
+  it('renders external links correctly', () => {
+    expect(
+      shallow(<CYFLink path="https://codeyourfuture.io" title="Homepage" />),
+    ).toMatchSnapshot();
+  });
 });
