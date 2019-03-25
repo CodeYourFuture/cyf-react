@@ -8,7 +8,7 @@ exports[`Banner Component renders 1`] = `
   />
   <Styled(div)>
     <h1>
-      Coding School for Refugees, Disadvantaged and Underprivileged People
+      Coding School for Refugees, Asylum Seekers and Underprivileged People
     </h1>
     <p>
       Learn to code and find a job

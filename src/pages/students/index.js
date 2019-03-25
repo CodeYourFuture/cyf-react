@@ -48,10 +48,6 @@ const Students = () => {
             <div id="requirements" className="col-sm-6 col-md-6 block-2-box">
               <h3>Requirements</h3>
               <ul className="text-left">
-                <li>
-                  Have the relevant documents to work in the country of
-                  residence.
-                </li>
                 <li>No previous coding experience is required!</li>
                 <li>Speak good English</li>
                 <li>Ready to commit to over 30 hours of learning per week</li>
