@@ -33,7 +33,7 @@ const Banner = () => (
     <BannerImage src={homepagebanner} alt="teaching=refugees-to-code" />
     <BannerText>
       <h1>
-        Coding School for Refugees, Disadvantaged and Underprivileged People
+        Coding School for Refugees, Asylum Seekers and Underprivileged People
       </h1>
       <p>Learn to code and find a job</p>
       <div className="page-title-bottom-link">
