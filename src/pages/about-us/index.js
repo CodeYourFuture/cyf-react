@@ -8,7 +8,7 @@ const AboutText = (
   <div>
     <p>
       We are a non-profit organisation supporting refugees and underprivileged
-      individuals with the dream of becoming developers.
+      individuals with the dream of becoming software developers.
     </p>
     <p>
       In their journey of interrupted lives, unfinished studies and integration

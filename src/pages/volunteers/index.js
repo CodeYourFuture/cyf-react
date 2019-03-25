@@ -20,8 +20,8 @@ const Volunteers = () => (
         <p>{Content.Volunteers.Body.Two}</p>
         <ul>
           <li>
-            <strong>Volunteers from virtually any background</strong>
-            to help us run and grow our organisation.
+            <strong>Volunteers from virtually any background</strong> to help us
+            run and grow our organisation.
           </li>
           <li>
             Professionals from the tech industry to join our{' '}

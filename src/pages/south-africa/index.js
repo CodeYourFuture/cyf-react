@@ -9,9 +9,9 @@ const SouthAfricaText = (
   <div>
     <p>
       Code Your Future is a non-profit organisation supporting refugees with the
-      dream of becoming developers. In their journey of interrupted lives,
-      unfinished studies and integration challenges, many asylum seekers and
-      refugees yearn to update their tech skills, but lack learning
+      dream of becoming software developers. In their journey of interrupted
+      lives, unfinished studies and integration challenges, many asylum seekers
+      and refugees yearn to update their tech skills, but lack learning
       opportunities. We want to change this by offering a program in which they
       are mentored by professional developers in order to prepare them to be
       able to work as software developers.
