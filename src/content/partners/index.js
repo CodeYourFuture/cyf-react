@@ -9,7 +9,8 @@ import coop from '../../assets/images/logos/coop.png';
 import airtame from '../../assets/images/logos/airtame.png';
 import honeycomb from '../../assets/images/logos/honeycombworks.png';
 import lventure from '../../assets/images/logos/logoenlabs2.png';
-import enlabs from '../../assets/images/logos/Enlabslogo2.png';
+import enlabs from '../../assets/images/logos/enlabs2.png';
+import onemyfi from '../../assets/images/logos/ONEMYFI.png';
 
 const partners = {
   general: [
@@ -80,6 +81,13 @@ const partners = {
       url: 'https://luissenlabs.com/',
       logo: enlabs,
       featured: true,
+    },
+    {
+      id: 'ONEMYFI',
+      name: 'ONEMYFI',
+      url: 'https://www.expressowifi.com/',
+      logo: onemyfi,
+      featured: false,
     },
   ],
 
