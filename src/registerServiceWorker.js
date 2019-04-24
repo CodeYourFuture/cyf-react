@@ -47,6 +47,7 @@ export default function register() {
 export function unregister() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready.then(registration => {
+      console.log(`removing service worker`, { registration })
       registration.unregister();
     });
   }
