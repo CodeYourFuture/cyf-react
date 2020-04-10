@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "auth0-js": "^9.4.2",
+    "auth0-js": "^9.13.2",
     "axios": "^0.18.0",
     "babel-plugin-emotion": "^8.0.9",
     "country-list": "^1.1.0",
